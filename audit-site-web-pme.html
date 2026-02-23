@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="fr" prefix="og: https://ogp.me/ns#">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<!-- ═══ SEO PRIMAIRE ═══ -->
+<title>Audit site web PME : pourquoi votre site ne transforme pas vos visiteurs en clients — Neural Ghost</title>
+<meta name="description" content="Audit site web PME : identifiez pourquoi votre site ne convertit pas vos visiteurs en clients et comment améliorer conversion, SEO local et performance. Analyse expert Neural Ghost.">
+<meta name="keywords" content="audit site web PME, audit site internet, taux de conversion, SEO local, optimisation site PME, refonte site web">
+<meta name="author" content="Nicolas — Neural Ghost">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<link rel="canonical" href="https://neuralghost.ai/audit-site-web-pme" />
+
+<!-- ═══ OPEN GRAPH ═══ -->
+<meta property="og:title" content="Audit site web PME : pourquoi votre site ne transforme pas vos visiteurs en clients">
+<meta property="og:description" content="Découvrez pourquoi votre site ne convertit pas et comment optimiser conversion, SEO local et performance. Audit expert PME.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://neuralghost.ai/audit-site-web-pme">
+<meta property="og:image" content="https://neuralghost.ai/images/og-audit-pme.jpg">
+
+<!-- ═══ SCHEMA.ORG ═══ -->
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Article",
+ "headline": "Audit site web PME : pourquoi votre site ne transforme pas vos visiteurs en clients",
+ "author": {
+   "@type": "Person",
+   "name": "Nicolas — Neural Ghost"
+ },
+ "publisher": {
+   "@type": "Organization",
+   "name": "Neural Ghost"
+ },
+ "description": "Analyse consultant : comprendre pourquoi un site PME ne convertit pas et comment optimiser SEO local, conversion et performance."
+}
+</script>
+
+<!-- ═══ PERFORMANCE ═══ -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;0,600;1,300;1,500&family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+/* ═══════════════════════════════════════════════════
+   DESIGN TOKENS
+   Propriété de Neural Ghost — Ultra Premium Aesthetic
+═══════════════════════════════════════════════════ */
+:root {
+  --bg:          #060608;
+  --bg-2:        #0c0c10;
+  --bg-3:        #111117;
+  --bg-4:        #161620;
+  --border:      rgba(255,255,255,0.05);
+  --border-md:   rgba(255,255,255,0.09);
+  --border-hi:   rgba(255,255,255,0.14);
+  --text:        #dcd8d0;
+  --text-2:      #9994a0;
+  --text-3:      #55525a;
+  --text-4:      #2e2c33;
+  --white:       #f5f2ec;
+  --gold:        #c9a96e;
+  --gold-2:      #e2c99a;
+  --gold-dim:    rgba(201,169,110,0.12);
+  --green:       #5dde9a;
+  --red:         #e05555;
+  --amber:       #e0a030;
+  --ff-display:  'Cormorant Garamond', Georgia, serif;
+  --ff-sans:     'Syne', sans-serif;
+  --ff-mono:     'JetBrains Mono', 'Courier New', monospace;
+  --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.45, 0, 0.55, 1);
+}
+
+/* ═══════════════════════════════════════════════════
+   RESET & BASE
+═══════════════════════════════════════════════════ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--ff-sans);
+  font-weight: 400;
+  line-height: 1.7;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Noise Texture */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9000;
+  opacity: 1;
+}
+
+/* Custom Cursor */
+.c-dot {
+  position: fixed;
+  width: 6px; height: 6px;
+  background: var(--gold);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width .2s, height .2s, background .2s;
+}
+.c-ring {
+  position: fixed;
+  width: 32px; height: 32px;
+  border: 1px solid rgba(201,169,110,0.35);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: width .35s var(--ease-out), height .35s var(--ease-out);
+}
+body:has(a:hover) .c-dot   { width: 10px; height: 10px; background: var(--gold-2); }
+body:has(a:hover) .c-ring  { width: 48px; height: 48px; border-color: rgba(201,169,110,0.2); }
+
+/* Progress Bar */
+.progress-bar {
+  position: fixed;
+  top: 0; left: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold), var(--gold-2));
+  z-index: 200;
+  width: 0%;
+  transition: width .1s linear;
+  box-shadow: 0 0 12px var(--gold);
+}
+
+/* ─── NAV ─── */
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 48px;
+  background: rgba(6,6,8,0.88);
+  backdrop-filter: blur(24px) saturate(1.2);
+  -webkit-backdrop-filter: blur(24px) saturate(1.2);
+  border-bottom: 1px solid var(--border);
+  z-index: 100;
+}
+.nav-logo {
+  font-family: var(--ff-display);
+  font-size: 1.35rem;
+  font-weight: 500;
+  letter-spacing: .06em;
+  color: var(--white);
+  text-decoration: none;
+}
+.nav-logo span { color: var(--gold); }
+.nav-links { display: flex; align-items: center; gap: 36px; }
+.nav-cta {
+  font-family: var(--ff-mono);
+  font-size: 10px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--bg);
+  background: var(--gold);
+  padding: 9px 22px;
+  text-decoration: none;
+  transition: background .25s, box-shadow .25s;
+  clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%);
+}
+
+/* ─── HERO ─── */
+.hero {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 120px 80px 72px;
+  position: relative;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 15% 90%, rgba(201,169,110,0.07) 0%, transparent 60%),
+    linear-gradient(170deg, var(--bg) 0%, var(--bg-2) 100%);
+  pointer-events: none;
+}
+.hero-ghost {
+  position: absolute;
+  right: -20px;
+  bottom: -40px;
+  font-family: var(--ff-display);
+  font-size: min(38vw, 520px);
+  font-weight: 600;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255,255,255,0.025);
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+.hero-content { position: relative; z-index: 1; max-width: 900px; }
+.hero-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 44px;
+}
+.eyebrow-dash { width: 32px; height: 1px; background: var(--gold); }
+.eyebrow-mono {
+  font-family: var(--ff-mono);
+  font-size: 10px;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.hero-h1 {
+  font-family: var(--ff-display);
+  font-size: clamp(2.8rem, 5.5vw, 5rem);
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: -.025em;
+  color: var(--white);
+}
+.hero-h1 em { font-style: italic; color: var(--gold); }
+.hero-sub {
+  margin-top: 32px;
+  max-width: 600px;
+  font-size: 18px;
+  color: var(--text-2);
+  line-height: 1.8;
+}
+
+/* ─── LAYOUT ─── */
+.wrap { max-width: 1200px; margin: 0 auto; padding: 0 48px; }
+.grid-layout {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 0;
+  padding-top: 80px;
+}
+
+/* Sidebar */
+.sidebar {
+  position: sticky;
+  top: 80px;
+  align-self: start;
+  padding-right: 48px;
+  border-right: 1px solid var(--border);
+}
+.sidebar-label {
+  font-family: var(--ff-mono);
+  font-size: 9px;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--text-4);
+  margin-bottom: 24px;
+}
+.toc { list-style: none; }
+.toc a {
+  font-family: var(--ff-mono);
+  font-size: 10px;
+  color: var(--text-3);
+  text-decoration: none;
+  display: flex;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+  transition: color .2s;
+}
+.toc a:hover, .toc a.active { color: var(--gold); }
+
+/* Body Content */
+.body { padding-left: 72px; padding-bottom: 120px; }
+h2 {
+  font-family: var(--ff-display);
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-weight: 300;
+  line-height: 1.2;
+  color: var(--white);
+  margin-top: 80px;
+  margin-bottom: 24px;
+}
+h2 em { font-style: italic; color: var(--gold); }
+h3 {
+  font-family: var(--ff-sans);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--text);
+  margin: 48px 0 16px;
+}
+p { font-size: 16px; color: var(--text-2); margin-bottom: 24px; line-height: 1.8; }
+strong { color: var(--text); font-weight: 600; }
+ul { list-style: none; margin-bottom: 32px; }
+ul li {
+  display: flex;
+  gap: 16px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-2);
+}
+ul li::before { content: '→'; color: var(--gold); font-size: 14px; flex-shrink: 0; }
+
+/* Components */
+.stat-block {
+  margin: 48px 0;
+  background: var(--bg-3);
+  border: 1px solid var(--border-md);
+  position: relative;
+}
+.stat-block::before {
+  content: ''; position: absolute; top: 0; left: 0; width: 2px; height: 100%; background: var(--gold);
+}
+.stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); }
+.stat-cell { padding: 40px 32px; text-align: center; border-right: 1px solid var(--border); }
+.stat-cell:last-child { border-right: none; }
+.stat-tag { font-family: var(--ff-mono); font-size: 9px; color: var(--text-4); display: block; margin-bottom: 16px; text-transform: uppercase; }
+.stat-val { font-family: var(--ff-display); font-size: 3.5rem; font-weight: 500; color: var(--white); line-height: 1; }
+.stat-val.up { color: var(--green); }
+
+.divider { border: none; border-top: 1px solid var(--border); margin: 72px 0; }
+
+.cta-wrap {
+  margin-top: 80px;
+  background: var(--bg-3);
+  border: 1px solid var(--border-md);
+  padding: 80px 64px;
+  text-align: center;
+  position: relative;
+}
+.cta-h { font-family: var(--ff-display); font-size: 3rem; font-weight: 300; color: var(--white); margin-bottom: 24px; }
+.cta-btn {
+  display: inline-flex;
+  background: var(--gold);
+  color: var(--bg);
+  padding: 18px 48px;
+  text-decoration: none;
+  font-family: var(--ff-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%);
+  transition: transform .25s, box-shadow .25s;
+}
+.cta-btn:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(201,169,110,.25); }
+
+/* Checklist Calculator */
+.cklist { margin: 48px 0; border: 1px solid var(--border-md); overflow: hidden; background: var(--bg-2); }
+.cklist-head { padding: 22px 36px; background: var(--bg-3); border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; }
+.cklist-head-title { font-family: var(--ff-mono); font-size: 9px; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); }
+.cklist-head-sub { font-family: var(--ff-mono); font-size: 9px; color: var(--text-4); }
+.ck-row { display: flex; align-items: center; gap: 16px; padding: 16px 36px; border-bottom: 1px solid var(--border); cursor: pointer; transition: background .2s; user-select: none; }
+.ck-row:last-of-type { border-bottom: none; }
+.ck-box { width: 18px; height: 18px; border: 1px solid var(--border-hi); flex-shrink: 0; position: relative; transition: background .2s, border-color .2s; }
+.ck-row.done .ck-box { background: var(--gold); border-color: var(--gold); }
+.ck-row.done .ck-box::after { content: ''; position: absolute; left: 4px; top: 2px; width: 6px; height: 9px; border-right: 2px solid var(--bg); border-bottom: 2px solid var(--bg); transform: rotate(45deg); }
+.ck-text { font-size: 14px; color: var(--text-2); flex: 1; transition: color .2s; }
+.ck-row.done .ck-text { color: var(--text-4); text-decoration: line-through; }
+.ck-pts { font-family: var(--ff-mono); font-size: 9px; color: var(--text-4); }
+.cklist-foot { padding: 20px 36px; background: var(--bg-4); border-top: 1px solid var(--border); display: flex; align-items: center; gap: 16px; }
+.ck-bar-track { flex: 1; height: 2px; background: var(--border-md); position: relative; overflow: hidden; }
+.ck-bar-fill { height: 100%; width: 0%; background: var(--gold); transition: width .5s var(--ease-out); }
+.ck-score-val { font-family: var(--ff-display); font-size: 1.4rem; color: var(--gold); min-width: 70px; text-align: right; }
+.ck-message { font-family: var(--ff-mono); font-size: 9px; color: var(--text-4); margin-left: auto; }
+
+/* FAQ */
+.faq { margin-top: 48px; }
+.faq-item { border-bottom: 1px solid var(--border); overflow: hidden; }
+.faq-q { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; cursor: pointer; font-size: 15px; font-weight: 600; color: var(--text); }
+.faq-item:hover .faq-q { color: var(--gold); }
+.faq-ico { width: 22px; height: 22px; border: 1px solid var(--border-md); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; color: var(--text-3); transition: transform .3s; }
+.faq-item.open .faq-ico { transform: rotate(45deg); color: var(--gold); border-color: var(--gold); }
+.faq-a { max-height: 0; overflow: hidden; transition: max-height .4s var(--ease-out); }
+.faq-a-inner { padding-bottom: 20px; font-size: 14px; color: var(--text-3); line-height: 1.8; }
+
+/* Animation Classes */
+.sr { opacity: 0; transform: translateY(24px); transition: opacity .7s var(--ease-out), transform .7s var(--ease-out); }
+.sr.vis { opacity: 1; transform: translateY(0); }
+
+@media (max-width: 960px) {
+  .hero { padding: 120px 24px 60px; }
+  .grid-layout { grid-template-columns: 1fr; }
+  .sidebar { display: none; }
+  .body { padding-left: 0; }
+  .stat-grid { grid-template-columns: 1fr; }
+  .stat-cell { border-right: none; border-bottom: 1px solid var(--border); }
+}
+</style>
+</head>
+
+<body>
+
+<div class="c-dot" id="cDot"></div>
+<div class="c-ring" id="cRing"></div>
+<div class="progress-bar" id="progressBar"></div>
+
+<nav class="nav">
+  <a class="nav-logo" href="/">Neural<span>Ghost</span></a>
+  <div class="nav-links">
+    <a class="nav-cta" href="#cta">Audit Gratuit</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="hero-bg"></div>
+  <div class="hero-ghost">NG</div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">
+      <span class="eyebrow-dash"></span>
+      <span class="eyebrow-mono">Analyse · Conversion · Stratégie Digital</span>
+    </div>
+    <h1 class="hero-h1">Audit site web PME :<br>pourquoi votre site ne <em>transforme pas</em><br>en clients</h1>
+    <p class="hero-sub">Le trafic n'est pas votre problème. Le problème, c'est ce qui se passe quand ils arrivent. Découvrez comment transformer votre site en machine à produire des résultats.</p>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="grid-layout">
+    
+    <aside class="sidebar">
+      <div class="sidebar-label">Sommaire</div>
+      <ul class="toc">
+        <li><a href="#conversion">La Conversion</a></li>
+        <li><a href="#causes">Les Causes</a></li>
+        <li><a href="#credibilite">Crédibilité</a></li>
+        <li><a href="#parcours">Parcours</a></li>
+        <li><a href="#audit">L'Audit Expert</a></li>
+        <li><a href="#roi">Impact CA</a></li>
+        <li><a href="#redesign">Redesign</a></li>
+        <li><a href="#diagnostic">Auto-Diag</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </aside>
+
+    <main class="body">
+      
+      <p class="sr">Quand un dirigeant de PME me dit que son site « ne fonctionne pas », la discussion commence presque toujours par la même hypothèse : <strong>il faudrait plus de trafic.</strong></p>
+      
+      <p class="sr">C’est compréhensible. Pourtant, dans la majorité des cas, ce n’est pas la visibilité qui pose problème, mais la capacité du site à convertir. Un site peut attirer des visiteurs régulièrement, être bien positionné sur Google, et malgré tout générer peu de contacts ou de demandes commerciales. C’est exactement ce que révèle un <strong>audit site web PME</strong> : les pertes invisibles.</p>
+
+      <section id="conversion">
+        <h2 class="sr">Le vrai problème : <em>La Conversion</em></h2>
+        <p class="sr">Plus de trafic ne garantit pas plus de clients. Si votre site convertit mal, augmenter la visibilité amplifie simplement le gaspillage. C’est comme verser de l’eau dans un seau percé.</p>
+
+        <div class="stat-block sr">
+          <div class="stat-grid">
+            <div class="stat-cell">
+              <span class="stat-tag">Trafic stable</span>
+              <span class="stat-val">800</span>
+              <span class="stat-unit">Visiteurs</span>
+            </div>
+            <div class="stat-cell">
+              <span class="stat-tag">Actuel · 1%</span>
+              <span class="stat-val">8</span>
+              <span class="stat-unit">Clients</span>
+            </div>
+            <div class="stat-cell">
+              <span class="stat-tag">Optimisé · 3%</span>
+              <span class="stat-val up">24</span>
+              <span class="stat-unit">Clients (×3)</span>
+            </div>
+          </div>
+        </div>
+        <p class="sr">Sans dépenser un euro en publicité supplémentaire, vous pouvez tripler vos résultats en optimisant simplement la conversion.</p>
+      </section>
+
+      <section id="causes">
+        <h2 class="sr">Pourquoi un site PME <em>ne convertit pas</em></h2>
+        
+        <h3>1. Un message trop flou</h3>
+        <p class="sr">Si un visiteur ne comprend pas immédiatement ce que vous proposez, il s'en va. Un bon site doit clarifier en quelques secondes : votre offre, votre cible, votre force et l’action attendue.</p>
+
+        <h3>2. Un site trop lent (surtout mobile)</h3>
+        <p class="sr">La vitesse d’un site influence directement le référencement naturel, la confiance utilisateur et le taux de conversion. Au-delà de trois secondes de chargement, les abandons explosent.</p>
+
+        <h3>3. Un SEO local insuffisant</h3>
+        <p class="sr">Pour une entreprise locale, la visibilité géographique est essentielle. Sans optimisation pour votre ville ou votre zone, vous laissez vos concurrents empocher vos prospects.</p>
+      </section>
+
+      <section id="credibilite">
+        <h2 class="sr">Un manque de <em>crédibilité visible</em></h2>
+        <p class="sr">Les visiteurs cherchent des preuves : avis clients, réalisations, chiffres, références. Sans ces éléments, la confiance reste fragile. Votre site doit rassurer avant de vendre.</p>
+      </section>
+
+      <section id="parcours">
+        <h2 class="sr">Un parcours utilisateur <em>mal pensé</em></h2>
+        <p class="sr">Beaucoup de sites informent mais ne guident pas. Un site efficace accompagne le visiteur vers l’action : contact, réservation, devis. Chaque page doit avoir une intention de conversion unique.</p>
+      </section>
+
+      <hr class="divider">
+
+      <section id="audit">
+        <h2 class="sr">Pourquoi un <em>audit expert</em> change réellement la donne</h2>
+        <p class="sr">Un audit Neural Ghost permet d’identifier trois niveaux de blocage critiques :</p>
+        <ul class="sr">
+          <li><strong>Technique :</strong> Vitesse, respect des Core Web Vitals, adaptation mobile.</li>
+          <li><strong>Commercial :</strong> Clarté du message, psychologie de vente, accroches.</li>
+          <li><strong>SEO :</strong> Mots-clés locaux, structure, autorité et backlinks.</li>
+        </ul>
+        <p class="sr">Sans diagnostic, on corrige à l’aveugle. Avec un audit, on priorise ce qui impacte réellement votre chiffre d’affaires.</p>
+      </section>
+
+      <section id="roi">
+        <h2 class="sr">Le lien direct entre <em>conversion et CA</em></h2>
+        <p class="sr">Prenons un exemple concret d'impact business :</p>
+        <ul class="sr">
+          <li>Panier moyen : 200 €</li>
+          <li>6 nouveaux clients par mois grâce à l'optimisation</li>
+          <li>→ 1 200 € de CA additionnel par mois</li>
+          <li>→ 14 400 € de CA additionnel par an</li>
+        </ul>
+        <p class="sr">C'est souvent l’investissement digital le plus rentable pour une PME.</p>
+      </section>
+
+      <section id="redesign">
+        <h2 class="sr">Audit avant redesign : <em>Une étape vitale</em></h2>
+        <p class="sr">Beaucoup d’entreprises refont leur site sans comprendre ce qui bloquait auparavant. Résultat : les mêmes problèmes persistent avec un nouveau design. L'audit permet d'éviter des dépenses inutiles.</p>
+      </section>
+
+      <section id="diagnostic">
+        <h2 class="sr">Auto-diagnostic : <em>Évaluez votre site</em></h2>
+        <p class="sr">Cochez les critères respectés pour voir votre score de conversion préliminaire :</p>
+        
+        <div class="cklist sr">
+          <div class="cklist-head">
+            <span class="cklist-head-title">Calculateur de Performance Digitale</span>
+            <span class="cklist-head-sub">Évaluation en 60 secondes</span>
+          </div>
+          <div class="ck-row" onclick="ckToggle(this)">
+            <div class="ck-box"></div>
+            <span class="ck-text">Chargement en moins de 3s sur mobile</span>
+            <span class="ck-pts">+15 pts</span>
+          </div>
+          <div class="ck-row" onclick="ckToggle(this)">
+            <div class="ck-box"></div>
+            <span class="ck-text">Message clair en moins de 5s</span>
+            <span class="ck-pts">+20 pts</span>
+          </div>
+          <div class="ck-row" onclick="ckToggle(this)">
+            <div class="ck-box"></div>
+            <span class="ck-text">Bouton d'action visible sans scroller</span>
+            <span class="ck-pts">+15 pts</span>
+          </div>
+          <div class="ck-row" onclick="ckToggle(this)">
+            <div class="ck-box"></div>
+            <span class="ck-text">Preuves sociales (avis, logos) présentes</span>
+            <span class="ck-pts">+15 pts</span>
+          </div>
+          <div class="ck-row" onclick="ckToggle(this)">
+            <div class="ck-box"></div>
+            <span class="ck-text">SEO local optimisé pour votre ville</span>
+            <span class="ck-pts">+15 pts</span>
+          </div>
+          <div class="ck-row" onclick="ckToggle(this)">
+            <div class="ck-box"></div>
+            <span class="ck-text">Parcours fluide vers la conversion</span>
+            <span class="ck-pts">+20 pts</span>
+          </div>
+          <div class="cklist-foot">
+            <span class="ck-score-lbl">Score</span>
+            <div class="ck-bar-track"><div class="ck-bar-fill" id="ckBar"></div></div>
+            <span class="ck-score-val" id="ckVal">0 / 100</span>
+            <span class="ck-message" id="ckMsg"></span>
+          </div>
+        </div>
+      </section>
+
+      <section id="faq">
+        <h2 class="sr">Questions <em>fréquentes</em></h2>
+        <div class="faq sr">
+          <div class="faq-item">
+            <div class="faq-q" onclick="faqToggle(this)">Qu'est-ce qu'un audit site web PME ? <span class="faq-ico">+</span></div>
+            <div class="faq-a"><div class="faq-a-inner">C'est une analyse complète couvrant technique, SEO et conversion pour identifier pourquoi vous ne transformez pas vos visiteurs en clients.</div></div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" onclick="faqToggle(this)">Quand verrai-je les premiers résultats ? <span class="faq-ico">+</span></div>
+            <div class="faq-a"><div class="faq-a-inner">Les gains en conversion sont visibles dès la mise en ligne des correctifs. Le SEO local prend généralement 4 à 8 semaines.</div></div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" onclick="faqToggle(this)">L'audit est-il vraiment sans engagement ? <span class="faq-ico">+</span></div>
+            <div class="faq-a"><div class="faq-a-inner">Oui, le premier diagnostic est offert pour vous permettre de quantifier vos opportunités de croissance sans risque.</div></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="cta">
+        <div class="cta-wrap sr">
+          <h2 class="cta-h">Prêt à transformer<br>votre site ?</h2>
+          <p>Obtenez un audit personnalisé complet de votre site sous 24h. Gratuit. Direct. Impactant.</p>
+          <a href="/landing.html#cta-final" class="cta-btn">Lancer mon Audit Gratuit</a>
+        </div>
+      </section>
+
+      <p class="sr" style="margin-top: 80px; font-style: italic; color: var(--text-4);">Neural Ghost — Expertise en performance digitale.</p>
+
+    </main>
+  </div>
+</div>
+
+<script>
+/* Cursor Logic */
+const dot = document.getElementById('cDot');
+const ring = document.getElementById('cRing');
+let mx=0, my=0, rx=0, ry=0;
+document.addEventListener('mousemove', e => {
+  mx = e.clientX; my = e.clientY;
+  dot.style.left = mx + 'px'; dot.style.top = my + 'px';
+});
+function loop() {
+  rx += (mx - rx) * 0.15; ry += (my - ry) * 0.15;
+  ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
+  requestAnimationFrame(loop);
+}
+loop();
+
+/* Progress Bar */
+const pb = document.getElementById('progressBar');
+window.addEventListener('scroll', () => {
+  const h = document.documentElement;
+  const pct = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
+  pb.style.width = pct + '%';
+});
+
+/* Scroll Reveal */
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('vis'); }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.sr').forEach(el => io.observe(el));
+
+/* Checklist Calculator */
+const PTS = [15, 20, 15, 15, 15, 20];
+function ckToggle(row) {
+  row.classList.toggle('done');
+  recalc();
+}
+function recalc() {
+  const rows = document.querySelectorAll('.ck-row');
+  let score = 0;
+  rows.forEach((r, i) => { if (r.classList.contains('done')) score += PTS[i]; });
+  document.getElementById('ckVal').textContent = score + ' / 100';
+  const bar = document.getElementById('ckBar');
+  bar.style.width = score + '%';
+  bar.style.background = score < 30 ? '#e05555' : score < 70 ? '#c9a96e' : '#5dde9a';
+}
+
+/* FAQ Toggle */
+function faqToggle(btn) {
+  const item = btn.parentElement;
+  const answer = item.querySelector('.faq-a');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(i => {
+    i.classList.remove('open');
+    i.querySelector('.faq-a').style.maxHeight = '0';
+  });
+  if (!isOpen) {
+    item.classList.add('open');
+    answer.style.maxHeight = answer.scrollHeight + 'px';
+  }
+}
+
+/* TOC Tracking */
+const tocLinks = document.querySelectorAll('.toc a');
+const observerSections = document.querySelectorAll('section[id]');
+window.addEventListener('scroll', () => {
+  let current = "";
+  observerSections.forEach(s => {
+    if (pageYOffset >= s.offsetTop - 120) { current = s.getAttribute('id'); }
+  });
+  tocLinks.forEach(l => {
+    l.classList.remove('active');
+    if (l.getAttribute('href') === "#" + current) { l.classList.add('active'); }
+  });
+});
+</script>
+
+</body>
+</html>

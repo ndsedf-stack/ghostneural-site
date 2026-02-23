@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="fr" prefix="og: https://ogp.me/ns#">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services — Neural Ghost · Stratégie digitale, SEO local, Refonte web PME</title>
+<meta name="description" content="Découvrez les services Neural Ghost : audit site web, SEO local, refonte site PME, optimisation conversion. Résultats mesurables, approche sur-mesure.">
+<link rel="canonical" href="https://neuralghost.ai/services">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;0,600;1,300;1,500&family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#060608;--bg-2:#0c0c10;--bg-3:#111117;--bg-4:#161620;
+  --border:rgba(255,255,255,0.05);--border-md:rgba(255,255,255,0.09);--border-hi:rgba(255,255,255,0.14);
+  --text:#dcd8d0;--text-2:#9994a0;--text-3:#55525a;--text-4:#2e2c33;
+  --white:#f5f2ec;--gold:#c9a96e;--gold-2:#e2c99a;--gold-dim:rgba(201,169,110,0.12);
+  --green:#5dde9a;--red:#e05555;--amber:#e0a030;
+  --ff-display:'Cormorant Garamond',Georgia,serif;
+  --ff-sans:'Syne',sans-serif;--ff-mono:'JetBrains Mono','Courier New',monospace;
+  --ease-out:cubic-bezier(0.16,1,0.3,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;font-size:16px;}
+body{background:var(--bg);color:var(--text);font-family:var(--ff-sans);font-weight:400;line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");pointer-events:none;z-index:9000;}
+
+/* CURSOR */
+.c-dot{position:fixed;width:6px;height:6px;background:var(--gold);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .2s,height .2s;}
+.c-ring{position:fixed;width:32px;height:32px;border:1px solid rgba(201,169,110,.35);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .35s var(--ease-out),height .35s var(--ease-out);}
+body:has(a:hover) .c-dot{width:10px;height:10px;background:var(--gold-2);}
+body:has(a:hover) .c-ring{width:48px;height:48px;}
+
+/* PROGRESS */
+.progress-bar{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--gold),var(--gold-2));z-index:200;width:0%;box-shadow:0 0 12px var(--gold);}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 48px;background:rgba(6,6,8,.88);backdrop-filter:blur(24px) saturate(1.2);border-bottom:1px solid var(--border);z-index:100;}
+.nav-logo{font-family:var(--ff-display);font-size:1.35rem;font-weight:500;letter-spacing:.06em;color:var(--white);text-decoration:none;}
+.nav-logo span{color:var(--gold);}
+.nav-links{display:flex;align-items:center;gap:36px;}
+.nav-link{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--text-3);text-decoration:none;transition:color .25s;}
+.nav-link:hover,.nav-link.active{color:var(--gold);}
+.nav-cta{font-family:var(--ff-mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--bg);background:var(--gold);padding:9px 22px;text-decoration:none;transition:background .25s,box-shadow .25s;clip-path:polygon(10px 0%,100% 0%,calc(100% - 10px) 100%,0% 100%);}
+.nav-cta:hover{background:var(--gold-2);box-shadow:0 4px 24px rgba(201,169,110,.3);}
+
+/* BREADCRUMB */
+.breadcrumb{padding:84px 80px 0;display:flex;align-items:center;gap:8px;}
+.bc-item{font-family:var(--ff-mono);font-size:10px;letter-spacing:.12em;color:var(--text-3);text-decoration:none;}
+.bc-item:hover{color:var(--gold);}
+.bc-sep{color:var(--text-4);font-size:10px;}
+.bc-current{color:var(--gold);}
+
+/* HERO */
+.hero{min-height:72vh;padding:60px 80px 72px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 10% 90%,rgba(201,169,110,.08) 0%,transparent 60%),radial-gradient(ellipse 50% 50% at 90% 20%,rgba(80,60,200,.04) 0%,transparent 50%),linear-gradient(170deg,var(--bg) 0%,var(--bg-2) 100%);pointer-events:none;}
+.hero-ghost{position:absolute;right:-20px;bottom:-40px;font-family:var(--ff-display);font-size:min(38vw,520px);font-weight:600;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.025);line-height:1;pointer-events:none;user-select:none;letter-spacing:-.04em;}
+.hero-content{position:relative;z-index:1;}
+.hero-eyebrow{display:flex;align-items:center;gap:14px;margin-bottom:44px;opacity:0;animation:fadeUp .7s .15s var(--ease-out) forwards;}
+.eyebrow-dash{width:32px;height:1px;background:var(--gold);}
+.eyebrow-mono{font-family:var(--ff-mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);}
+.hero-h1{font-family:var(--ff-display);font-size:clamp(3rem,6.5vw,6.5rem);font-weight:300;line-height:1.08;letter-spacing:-.025em;color:var(--white);max-width:860px;opacity:0;animation:fadeUp .85s .3s var(--ease-out) forwards;}
+.hero-h1 em{font-style:italic;color:var(--gold);}
+.hero-sub{margin-top:32px;max-width:560px;font-size:17px;color:var(--text-2);line-height:1.75;opacity:0;animation:fadeUp .8s .45s var(--ease-out) forwards;}
+.hero-sub strong{color:var(--text);}
+.hero-footer{display:flex;align-items:center;justify-content:space-between;padding-top:48px;border-top:1px solid var(--border);flex-wrap:wrap;gap:20px;opacity:0;animation:fadeUp .75s .6s var(--ease-out) forwards;}
+.hero-tags{display:flex;gap:10px;flex-wrap:wrap;}
+.tag{font-family:var(--ff-mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--text-3);border:1px solid var(--border-md);padding:5px 13px;transition:border-color .25s,color .25s;}
+.tag:hover{border-color:var(--gold);color:var(--gold);}
+
+/* LAYOUT */
+.wrap{max-width:1160px;margin:0 auto;padding:0 64px;}
+.section-wrap{padding:100px 0 60px;}
+.divider{border:none;border-top:1px solid var(--border);margin:72px 0;}
+
+/* SEC LABEL */
+.sec-label{display:flex;align-items:center;gap:14px;margin-bottom:20px;}
+.sec-label .mono{font-family:var(--ff-mono);font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);}
+.sec-label .line{height:1px;width:48px;background:linear-gradient(to right,var(--gold),transparent);}
+h2{font-family:var(--ff-display);font-size:clamp(2rem,4vw,3rem);font-weight:300;line-height:1.2;letter-spacing:-.018em;color:var(--white);margin-bottom:24px;}
+h2 em{font-style:italic;color:var(--gold);}
+p{font-size:16px;color:var(--text-2);line-height:1.88;margin-bottom:20px;}
+p strong{color:var(--text);}
+
+/* SERVICES GRID */
+.services-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--border);border:1px solid var(--border);margin:48px 0;}
+.service-card{background:var(--bg-2);padding:48px 40px;position:relative;overflow:hidden;transition:background .3s;cursor:default;}
+.service-card:hover{background:var(--bg-3);}
+.service-card::after{content:'';position:absolute;bottom:0;left:0;height:2px;width:0%;background:var(--gold);transition:width .5s var(--ease-out);}
+.service-card:hover::after{width:100%;}
+.service-card.featured{background:var(--bg-3);border-left:2px solid var(--gold);}
+.service-card.featured::after{display:none;}
+.service-n{font-family:var(--ff-mono);font-size:9px;letter-spacing:.2em;color:var(--gold);margin-bottom:20px;display:block;}
+.service-icon{font-size:2rem;display:block;margin-bottom:20px;}
+.service-title{font-family:var(--ff-display);font-size:1.8rem;font-weight:500;color:var(--white);margin-bottom:14px;line-height:1.25;}
+.service-desc{font-size:14px;color:var(--text-3);line-height:1.78;margin-bottom:24px;}
+.service-list{list-style:none;margin:0;}
+.service-list li{font-size:13px;color:var(--text-3);padding:8px 0;border-bottom:1px solid var(--border);display:flex;gap:12px;align-items:baseline;}
+.service-list li::before{content:'→';color:var(--gold);font-size:10px;flex-shrink:0;}
+.service-badge{display:inline-flex;align-items:center;gap:8px;margin-top:24px;font-family:var(--ff-mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(201,169,110,.28);padding:6px 14px;}
+.service-badge::before{content:'✦';font-size:8px;}
+
+/* PROCESS */
+.process{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);margin:48px 0;}
+.step{background:var(--bg-2);padding:36px 28px;position:relative;overflow:hidden;transition:background .3s;}
+.step:hover{background:var(--bg-3);}
+.step-n{font-family:var(--ff-display);font-size:4rem;font-weight:600;color:rgba(201,169,110,.08);line-height:1;position:absolute;top:16px;right:20px;pointer-events:none;}
+.step-icon{font-size:1.4rem;display:block;margin-bottom:16px;}
+.step-title{font-family:var(--ff-sans);font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--text);margin-bottom:10px;}
+.step-desc{font-size:13px;color:var(--text-3);line-height:1.7;}
+
+/* STATS BANNER */
+.stats-banner{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border-md);margin:48px 0;position:relative;overflow:hidden;}
+.stats-banner::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(201,169,110,.06),transparent 60%);pointer-events:none;}
+.stat-b{padding:40px 24px;text-align:center;position:relative;}
+.stat-b-v{font-family:var(--ff-display);font-size:clamp(2.2rem,4vw,3.6rem);font-weight:500;color:var(--gold);line-height:1;display:block;}
+.stat-b-l{font-family:var(--ff-mono);font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--text-4);display:block;margin-top:10px;}
+
+/* CTA BLOCK */
+.cta-wrap{position:relative;overflow:hidden;border:1px solid var(--border-md);background:var(--bg-3);margin-top:80px;}
+.cta-wrap::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 80% at 50% 0%,rgba(201,169,110,.07),transparent 60%),repeating-linear-gradient(-60deg,transparent,transparent 60px,rgba(255,255,255,.008) 60px,rgba(255,255,255,.008) 61px);pointer-events:none;}
+.cta-inner{position:relative;z-index:1;padding:72px 64px;text-align:center;}
+.cta-kicker{font-family:var(--ff-mono);font-size:9px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:32px;}
+.cta-kicker-line{width:28px;height:1px;background:var(--gold);opacity:.5;}
+.cta-h{font-family:var(--ff-display);font-size:clamp(2rem,4.5vw,3.8rem);font-weight:300;line-height:1.18;letter-spacing:-.02em;color:var(--white);max-width:700px;margin:0 auto 20px;}
+.cta-h em{font-style:italic;color:var(--gold);}
+.cta-copy{font-size:16px;color:var(--text-2);max-width:520px;margin:0 auto 40px;line-height:1.8;}
+.cta-copy strong{color:var(--text);}
+.cta-reassurance{display:flex;align-items:center;justify-content:center;gap:32px;margin-bottom:40px;flex-wrap:wrap;}
+.cta-r-item{display:flex;align-items:center;gap:8px;font-family:var(--ff-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3);}
+.cta-r-item::before{content:'✦';color:var(--gold);font-size:10px;}
+.cta-btn{display:inline-flex;align-items:center;gap:14px;background:var(--gold);color:var(--bg);padding:18px 52px;text-decoration:none;font-family:var(--ff-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;transition:background .25s,box-shadow .25s,transform .25s;clip-path:polygon(12px 0%,100% 0%,calc(100% - 12px) 100%,0% 100%);}
+.cta-btn:hover{background:var(--gold-2);box-shadow:0 16px 56px rgba(201,169,110,.28);transform:translateY(-3px);}
+
+/* SCROLL REVEAL */
+.sr{opacity:0;transform:translateY(22px);transition:opacity .75s var(--ease-out),transform .75s var(--ease-out);}
+.sr.vis{opacity:1;transform:translateY(0);}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px);}to{opacity:1;transform:translateY(0);}}
+
+@media(max-width:960px){
+  .nav{padding:0 24px;}.nav-links .nav-link{display:none;}
+  .breadcrumb{padding:80px 24px 0;}.hero{padding:40px 24px 60px;}.hero-ghost{display:none;}
+  .wrap{padding:0 24px;}.services-grid{grid-template-columns:1fr;}
+  .process{grid-template-columns:1fr 1fr;}.stats-banner{grid-template-columns:repeat(2,1fr);}
+  .cta-inner{padding:48px 28px;}
+}
+</style>
+</head>
+<body>
+
+<div class="c-dot" id="cDot"></div>
+<div class="c-ring" id="cRing"></div>
+<div class="progress-bar" id="progressBar"></div>
+
+<nav class="nav">
+  <a class="nav-logo" href="/landing.html">Neural<span>Ghost</span></a>
+  <div class="nav-links">
+    <a class="nav-link active" href="/services.html">Services</a>
+    <a class="nav-link" href="/realisations.html">Réalisations</a>
+    <a class="nav-link" href="https://neuralghost.ai/blog">Journal</a>
+    <a class="nav-cta" href="/audit-site-web-pme.html">Audit gratuit</a>
+  </div>
+</nav>
+
+<nav aria-label="Fil d'Ariane" class="breadcrumb">
+  <a class="bc-item" href="/landing.html">Accueil</a>
+  <span class="bc-sep">/</span>
+  <span class="bc-current">Services</span>
+</nav>
+
+<header class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-ghost">SRV</div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">
+      <span class="eyebrow-dash"></span>
+      <span class="eyebrow-mono">Audit · Refonte · SEO Local · Conversion</span>
+    </div>
+    <h1 class="hero-h1">
+      Des services conçus<br>
+      pour <em>transformer</em><br>
+      votre site en machine commerciale.
+    </h1>
+    <p class="hero-sub">
+      Pas de packages standard. Chaque intervention part d'un diagnostic précis pour identifier <strong>les leviers qui impactent réellement votre chiffre d'affaires</strong>.
+    </p>
+    <div class="hero-footer">
+      <div class="hero-tags">
+        <span class="tag">Audit & Diagnostic</span>
+        <span class="tag">SEO Local</span>
+        <span class="tag">Refonte Site</span>
+        <span class="tag">Optimisation Conversion</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <!-- STATS BANNER -->
+  <div class="stats-banner sr">
+    <div class="stat-b">
+      <span class="stat-b-v">+38K€</span>
+      <span class="stat-b-l">CA additionnel moyen / an</span>
+    </div>
+    <div class="stat-b">
+      <span class="stat-b-v">×3</span>
+      <span class="stat-b-l">Taux de conversion moyen</span>
+    </div>
+    <div class="stat-b">
+      <span class="stat-b-v">24h</span>
+      <span class="stat-b-l">Délai livraison audit</span>
+    </div>
+    <div class="stat-b">
+      <span class="stat-b-v">60%</span>
+      <span class="stat-b-l">Des cas sans refonte nécessaire</span>
+    </div>
+  </div>
+
+  <div class="section-wrap">
+    <div class="sec-label sr">
+      <span class="mono">Nos services</span>
+      <span class="line"></span>
+    </div>
+    <h2 class="sr">Ce que nous faisons — <em>et pourquoi ça marche</em></h2>
+    <p class="sr">Chaque service est conçu pour produire un impact mesurable. Nous commençons toujours par comprendre avant d'agir.</p>
+
+    <div class="services-grid">
+
+      <div class="service-card featured sr">
+        <span class="service-n">01 — Service pilier</span>
+        <span class="service-icon">🔍</span>
+        <div class="service-title">Audit Site Web PME</div>
+        <p class="service-desc">Le point de départ de toute intervention efficace. Un diagnostic structuré en trois dimensions — technique, commerciale, SEO — pour identifier précisément ce qui bloque votre croissance.</p>
+        <ul class="service-list">
+          <li>Analyse vitesse & Core Web Vitals</li>
+          <li>Diagnostic message & conversion</li>
+          <li>Audit SEO local & Google Business</li>
+          <li>Plan d'action priorisé par impact</li>
+          <li>Livré sous 24h, sans engagement</li>
+        </ul>
+        <span class="service-badge">Gratuit · Livraison 24h</span>
+      </div>
+
+      <div class="service-card sr">
+        <span class="service-n">02</span>
+        <span class="service-icon">🎯</span>
+        <div class="service-title">Optimisation Conversion</div>
+        <p class="service-desc">Transformer votre trafic existant en contacts qualifiés. Sans augmenter votre budget publicitaire, en activant les leviers commerciaux qui freinent votre site.</p>
+        <ul class="service-list">
+          <li>Clarification du message principal</li>
+          <li>Restructuration du parcours utilisateur</li>
+          <li>Optimisation des appels à l'action</li>
+          <li>Intégration preuves sociales</li>
+          <li>Tests & mesure des résultats</li>
+        </ul>
+        <span class="service-badge">Résultats en 2–4 semaines</span>
+      </div>
+
+      <div class="service-card sr">
+        <span class="service-n">03</span>
+        <span class="service-icon">🔍</span>
+        <div class="service-title">SEO Local</div>
+        <p class="service-desc">Devenir visible là où vos prospects cherchent — dans votre ville, votre zone. Un SEO local bien construit attire un trafic qualifié et intentionnel, prêt à acheter.</p>
+        <ul class="service-list">
+          <li>Recherche mots-clés locaux</li>
+          <li>Optimisation Google Business Profile</li>
+          <li>Structure contenu local</li>
+          <li>Stratégie de citations locales</li>
+          <li>Suivi positions géolocalisées</li>
+        </ul>
+        <span class="service-badge">Premiers effets 4–8 semaines</span>
+      </div>
+
+      <div class="service-card sr">
+        <span class="service-n">04</span>
+        <span class="service-icon">⚡</span>
+        <div class="service-title">Refonte Site Web</div>
+        <p class="service-desc">Recommandée uniquement lorsque l'audit le justifie — jamais par défaut. Une refonte menée avec un brief précis, fondée sur un diagnostic et orientée résultats dès le premier jour.</p>
+        <ul class="service-list">
+          <li>Audit préalable systématique</li>
+          <li>Architecture conversion-first</li>
+          <li>Design sur-mesure & responsive</li>
+          <li>Performance technique optimisée</li>
+          <li>Intégration SEO local native</li>
+        </ul>
+        <span class="service-badge">Sur devis · Délai 3–6 semaines</span>
+      </div>
+
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- PROCESS -->
+  <div class="sec-label sr">
+    <span class="mono">Notre méthode</span>
+    <span class="line"></span>
+  </div>
+  <h2 class="sr">Une approche en 4 étapes — <em>sans zone de flou</em></h2>
+  <p class="sr">Pas de jargon, pas d'incertitude. Vous savez à chaque étape ce qui est fait, pourquoi, et comment le mesurer.</p>
+
+  <div class="process sr">
+    <div class="step">
+      <span class="step-n">01</span>
+      <span class="step-icon">🔎</span>
+      <div class="step-title">Diagnostic</div>
+      <p class="step-desc">Audit technique, commercial et SEO. On identifie les freins réels — pas les supposés.</p>
+    </div>
+    <div class="step">
+      <span class="step-n">02</span>
+      <span class="step-icon">📐</span>
+      <div class="step-title">Priorisation</div>
+      <p class="step-desc">On classe les actions par impact sur le CA. 20% des actions produisent 80% des résultats.</p>
+    </div>
+    <div class="step">
+      <span class="step-n">03</span>
+      <span class="step-icon">⚙️</span>
+      <div class="step-title">Exécution</div>
+      <p class="step-desc">Intervention ciblée, sans refonte inutile. Chaque action est measurable et documentée.</p>
+    </div>
+    <div class="step">
+      <span class="step-n">04</span>
+      <span class="step-icon">📈</span>
+      <div class="step-title">Mesure</div>
+      <p class="step-desc">Suivi des résultats concrets : trafic, conversions, contacts. Le ROI est visible et documenté.</p>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-wrap sr" id="cta">
+    <div class="cta-inner">
+      <div class="cta-kicker">
+        <span class="cta-kicker-line"></span>
+        Première étape · Gratuit · Sans engagement
+        <span class="cta-kicker-line"></span>
+      </div>
+      <h2 class="cta-h">Commencez par <em>comprendre</em><br>avant d'investir</h2>
+      <p class="cta-copy">Avant tout devis, avant toute décision, un audit gratuit vous donne une <strong>vision claire et actionnelle</strong> de votre situation digitale.</p>
+      <div class="cta-reassurance">
+        <div class="cta-r-item">Réponse sous 24h</div>
+        <div class="cta-r-item">100% gratuit</div>
+        <div class="cta-r-item">Aucun engagement</div>
+        <div class="cta-r-item">Sans jargon</div>
+      </div>
+      <a class="cta-btn" href="/audit-site-web-pme.html">
+        Demander mon audit gratuit
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<script>
+const dot=document.getElementById('cDot'),ring=document.getElementById('cRing');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;dot.style.left=mx+'px';dot.style.top=my+'px';});
+(function loop(){rx+=(mx-rx)*.10;ry+=(my-ry)*.10;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(loop);})();
+const pb=document.getElementById('progressBar');
+window.addEventListener('scroll',()=>{const h=document.documentElement;pb.style.width=Math.min((h.scrollTop/(h.scrollHeight-h.clientHeight))*100,100)+'%';});
+const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');io.unobserve(e.target);}});},{threshold:.08});
+document.querySelectorAll('.sr').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
