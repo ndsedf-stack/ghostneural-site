@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Journal — Neural Ghost · Stratégie, SEO et Performance pour PME</title>
+<meta name="description" content="Découvrez nos derniers articles sur l'optimisation de conversion, le SEO local et la performance web pour les PME.">
+<link rel="canonical" href="https://neuralghost.ai/journal.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;0,600;1,300;1,500&family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#060608;--bg-2:#0c0c10;--bg-3:#111117;--bg-4:#161620;
+  --border:rgba(255,255,255,0.05);--border-md:rgba(255,255,255,0.09);--border-hi:rgba(255,255,255,0.14);
+  --text:#dcd8d0;--text-2:#9994a0;--text-3:#55525a;--text-4:#2e2c33;
+  --white:#f5f2ec;--gold:#c9a96e;--gold-2:#e2c99a;--gold-dim:rgba(201,169,110,0.12);
+  --green:#5dde9a;--red:#e05555;
+  --ff-display:'Cormorant Garamond',Georgia,serif;
+  --ff-sans:'Syne',sans-serif;--ff-mono:'JetBrains Mono','Courier New',monospace;
+  --ease-out:cubic-bezier(0.16,1,0.3,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:var(--ff-sans);line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");pointer-events:none;z-index:9000;}
+
+/* CURSOR */
+.c-dot{position:fixed;width:6px;height:6px;background:var(--gold);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .2s,height .2s;}
+.c-ring{position:fixed;width:32px;height:32px;border:1px solid rgba(201,169,110,.35);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .35s var(--ease-out),height .35s var(--ease-out);}
+body:has(a:hover) .c-dot{width:10px;height:10px;background:var(--gold-2);}
+body:has(a:hover) .c-ring{width:48px;height:48px;}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 48px;background:rgba(6,6,8,.88);backdrop-filter:blur(24px) saturate(1.2);border-bottom:1px solid var(--border);z-index:100;}
+.nav-logo{font-family:var(--ff-display);font-size:1.35rem;font-weight:500;letter-spacing:.06em;color:var(--white);text-decoration:none;}
+.nav-logo span{color:var(--gold);}
+.nav-links{display:flex;align-items:center;gap:36px;}
+.nav-link{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--text-3);text-decoration:none;transition:color .25s;}
+.nav-link:hover,.nav-link.active{color:var(--gold);}
+.nav-cta{font-family:var(--ff-mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--bg);background:var(--gold);padding:9px 22px;text-decoration:none;transition:background .25s,box-shadow .25s;clip-path:polygon(10px 0%,100% 0%,calc(100% - 10px) 100%,0% 100%);}
+.nav-cta:hover{background:var(--gold-2);box-shadow:0 4px 24px rgba(201,169,110,.3);}
+
+/* HERO */
+.hero{min-height:50vh;padding:120px 80px 72px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:center;text-align:center;}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 100%,rgba(201,169,110,.07) 0%,transparent 60%),linear-gradient(170deg,var(--bg) 0%,var(--bg-2) 100%);pointer-events:none;}
+.hero-ghost{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-family:var(--ff-display);font-size:25vw;font-weight:600;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.02);line-height:1;pointer-events:none;user-select:none;letter-spacing:-.04em;}
+.hero-content{position:relative;z-index:1;}
+.hero-eyebrow{display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:32px;}
+.eyebrow-dash{width:32px;height:1px;background:var(--gold);}
+.eyebrow-mono{font-family:var(--ff-mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);}
+.hero-h1{font-family:var(--ff-display);font-size:clamp(3rem,6vw,5.5rem);font-weight:300;line-height:1.1;letter-spacing:-.02em;color:var(--white);margin:0 auto;max-width:800px;}
+.hero-h1 em{font-style:italic;color:var(--gold);}
+
+/* GRID */
+.wrap{max-width:1160px;margin:0 auto;padding:0 64px 100px;}
+.journal-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:60px;}
+.read-card { background: var(--bg-2); border: 1px solid var(--border); padding: 40px; text-decoration: none; transition: all .3s var(--ease-out); display: flex; flex-direction: column; position: relative; overflow: hidden; }
+.read-card:hover { background: var(--bg-3); border-color: var(--gold); transform: translateY(-4px); }
+.read-tag { font-family: var(--ff-mono); font-size: 9px; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+.read-title { font-family: var(--ff-display); font-size: 1.8rem; color: var(--white); margin-bottom: 16px; line-height: 1.25; }
+.read-desc { font-size: 15px; color: var(--text-3); line-height: 1.7; margin-bottom: 28px; flex-grow: 1; }
+.read-more { font-family: var(--ff-mono); font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--gold); display: flex; align-items: center; gap: 8px; margin-top: auto; }
+
+/* RESPONSIVE */
+@media(max-width:960px){
+  .nav{padding:0 24px;}.nav-links .nav-link{display:none;}
+  .hero{padding:100px 24px 60px;}.hero-ghost{display:none;}
+  .wrap{padding:0 24px;}.journal-grid{grid-template-columns:1fr;}
+  .hero-h1{font-size:3rem;}
+}
+
+/* SCROLL REVEAL */
+.sr{opacity:0;transform:translateY(22px);transition:opacity .75s var(--ease-out),transform .75s var(--ease-out);}
+.sr.vis{opacity:1;transform:translateY(0);}
+</style>
+</head>
+<body>
+
+<div class="c-dot" id="cDot"></div>
+<div class="c-ring" id="cRing"></div>
+
+<nav class="nav">
+  <a class="nav-logo" href="index.html">Neural<span>Ghost</span></a>
+  <div class="nav-links">
+    <a class="nav-link" href="services.html">Services</a>
+    <a class="nav-link" href="realisations.html">Réalisations</a>
+    <a class="nav-link active" href="journal.html">Journal</a>
+    <a class="nav-cta" href="audit-site-web-pme.html">Audit gratuit</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-ghost">JOURNAL</div>
+  <div class="hero-content">
+    <div class="hero-eyebrow sr">
+      <span class="eyebrow-dash"></span>
+      <span class="eyebrow-mono">Expertise · Stratégie · PME</span>
+    </div>
+    <h1 class="hero-h1 sr">
+      Décoder la <em>performance</em><br>digitale.
+    </h1>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="journal-grid">
+    <a href="index.html" class="read-card sr">
+      <span class="read-tag">Conversion</span>
+      <div class="read-title">Pourquoi votre site ne transforme pas en clients</div>
+      <p class="read-desc">Le trafic n'est pas votre seul problème. Apprenez à identifier les fuites de conversion silencieuses et comment les boucher.</p>
+      <span class="read-more">Lire l'article →</span>
+    </a>
+
+    <a href="audit-site-web-pme.html" class="read-card sr">
+      <span class="read-tag">Audit</span>
+      <div class="read-title">L'Audit Site Web PME : Le point de départ</div>
+      <p class="read-desc">Découvrez notre méthode d'audit gratuite mise au point pour les PME françaises pour identifier les leviers de croissance immédiats.</p>
+      <span class="read-more">Lire l'article →</span>
+    </a>
+
+    <a href="seo-local-pme.html" class="read-card sr">
+      <span class="read-tag">SEO Local</span>
+      <div class="read-title">Le Guide 2025 du SEO Local pour PME</div>
+      <p class="read-desc">Dominez les recherches dans votre ville et votre région. Stratégie concrète pour attirer des clients locaux qualifiés.</p>
+      <span class="read-more">Lire l'article →</span>
+    </a>
+
+    <a href="vitesse-chargement-site-pme.html" class="read-card sr">
+      <span class="read-tag">Performance</span>
+      <div class="read-title">Impact de la vitesse sur votre CA</div>
+      <p class="read-desc">Pourquoi chaque milliseconde compte. Comment l'optimisation des Core Web Vitals impacte directement votre rentabilité.</p>
+      <span class="read-more">Lire l'article →</span>
+    </a>
+
+    <a href="google-business-profile-pme.html" class="read-card sr">
+      <span class="read-tag">Visibilité</span>
+      <div class="read-title">Optimiser sa fiche Google Business Profile</div>
+      <p class="read-desc">Les secrets pour apparaître dans le "Local Pack" et transformer les recherches Google Maps en appels clients directs.</p>
+      <span class="read-more">Lire l'article →</span>
+    </a>
+
+    <a href="refonte-site-web-pme.html" class="read-card sr">
+      <span class="read-tag">Stratégie</span>
+      <div class="read-title">Quand faut-il (vraiment) refondre son site ?</div>
+      <p class="read-desc">Audit ou refonte totale ? Apprenez à faire le bon choix stratégique pour votre budget et vos objectifs commerciaux.</p>
+      <span class="read-more">Lire l'article →</span>
+    </a>
+  </div>
+</div>
+
+<script>
+const dot=document.getElementById('cDot'),ring=document.getElementById('cRing');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;dot.style.left=mx+'px';dot.style.top=my+'px';});
+(function loop(){rx+=(mx-rx)*.10;ry+=(my-ry)*.10;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(loop);})();
+const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');io.unobserve(e.target);}});},{threshold:.08});
+document.querySelectorAll('.sr').forEach(el=>io.observe(el));
+</script>
+
+</body>
+</html>
