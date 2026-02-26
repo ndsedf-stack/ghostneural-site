@@ -1021,47 +1021,47 @@ window.addEventListener('scroll', () => {
 /* ─── QUESTIONNAIRE MULTI-ETAPES ─── */
 const STEP_LABELS = ['', 'Votre site — Etape 1 / 3', 'Vos objectifs — Etape 2 / 3', 'Contexte — Etape 3 / 3'];
 
+function showErr(msg) {
+  var err = document.getElementById('auditError');
+  if (err) { err.textContent = msg; err.style.display = 'block'; }
+}
+function hideErr() {
+  var err = document.getElementById('auditError');
+  if (err) { err.style.display = 'none'; }
+}
+
 function goStep(from, to) {
   // Validation etape 1
   if (from === 1) {
-    const prenom  = document.getElementById('a-prenom').value.trim();
-    const email   = document.getElementById('a-email').value.trim();
-    const url     = document.getElementById('a-url').value.trim();
-    const secteur = document.getElementById('a-secteur').value;
+    var prenom  = (document.getElementById('a-prenom').value || '').trim();
+    var email   = (document.getElementById('a-email').value || '').trim();
+    var url     = (document.getElementById('a-url').value || '').trim();
+    var secteur = (document.getElementById('a-secteur').value || '').trim();
     if (!prenom || !email || !url || !secteur) {
-      const err = document.getElementById('auditError');
-      err.textContent = 'Merci de remplir les champs obligatoires de cette etape.';
-      err.style.display = 'block';
-      document.getElementById('step3').appendChild(err);
-      document.getElementById('step1').appendChild(err);
-      err.style.display = 'block';
+      showErr('Merci de remplir tous les champs obligatoires (*).');
       return;
     }
-    // masquer erreur si valide
-    const err = document.getElementById('auditError');
-    if (err) err.style.display = 'none';
   }
   // Validation etape 2
   if (from === 2) {
-    const prob  = document.querySelector('input[name="probleme"]:checked');
-    const obj   = document.querySelector('input[name="objectif"]:checked');
+    var prob = document.querySelector('input[name="probleme"]:checked');
+    var obj  = document.querySelector('input[name="objectif"]:checked');
     if (!prob || !obj) {
-      alert('Merci de cocher une reponse pour chaque question.');
+      showErr('Merci de sélectionner une option pour chaque question.');
       return;
     }
   }
 
-  const fromEl = document.getElementById('step' + from);
-  const toEl   = document.getElementById('step' + to);
-  fromEl.classList.remove('active');
-  toEl.classList.add('active');
+  hideErr();
 
-  // Update dots
-  document.querySelectorAll('.step-dot').forEach(d => {
-    const n = parseInt(d.dataset.step);
-    d.classList.remove('active','done');
-    if (n === to)   d.classList.add('active');
-    if (n < to)     d.classList.add('done');
+  document.getElementById('step' + from).classList.remove('active');
+  document.getElementById('step' + to).classList.add('active');
+
+  document.querySelectorAll('.step-dot').forEach(function(d) {
+    var n = parseInt(d.dataset.step);
+    d.classList.remove('active', 'done');
+    if (n === to) d.classList.add('active');
+    if (n < to)  d.classList.add('done');
   });
 
   document.getElementById('stepLabel').textContent = STEP_LABELS[to];
