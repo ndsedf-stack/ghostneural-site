@@ -483,6 +483,79 @@ ul li::before { content: '→'; color: var(--gold); font-size: 14px; flex-shrink
   .stat-grid { grid-template-columns: 1fr; }
   .stat-cell { border-right: none; border-bottom: 1px solid var(--border); }
 }
+
+/* ─── STEPPER ─── */
+.stepper {
+  display: flex; align-items: center; justify-content: center;
+  gap: 0; margin: 32px auto 12px; max-width: 280px;
+}
+.step-dot {
+  width: 36px; height: 36px; border-radius: 50%;
+  border: 1px solid var(--border-md);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--ff-mono); font-size: 11px; color: var(--text-4);
+  background: var(--bg-4); transition: all .3s var(--ease-out); flex-shrink: 0;
+}
+.step-dot.active  { background: var(--gold); border-color: var(--gold); color: var(--bg); }
+.step-dot.done    { background: rgba(93,222,154,0.15); border-color: var(--green); color: var(--green); }
+.step-line { flex: 1; height: 1px; background: var(--border-md); max-width: 60px; }
+.step-label {
+  font-family: var(--ff-mono); font-size: 9px; letter-spacing: .18em;
+  text-transform: uppercase; color: var(--text-4); margin-bottom: 32px; text-align: center;
+}
+
+/* ─── FORM STEPS ─── */
+.form-step { display: none; animation: fadeUp .4s var(--ease-out) both; }
+.form-step.active { display: block; }
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── CHOICE CARDS ─── */
+.choice-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 12px;
+}
+.choice-card {
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  padding: 16px 12px; border: 1px solid var(--border-md); background: var(--bg-4);
+  cursor: pointer; transition: all .2s; text-align: center; border-radius: 2px;
+  font-size: 12px; color: var(--text-2); line-height: 1.3;
+}
+.choice-card input[type="radio"] { display: none; }
+.choice-card:hover { border-color: var(--gold); background: var(--bg-3); color: var(--text); }
+.choice-card:has(input:checked) {
+  border-color: var(--gold); background: var(--gold-dim); color: var(--gold);
+}
+.choice-ico { font-size: 1.4rem; }
+
+/* ─── FORM BUTTONS ─── */
+.form-next-btn { width: 100%; justify-content: center; margin-top: 24px; }
+.form-back-btn {
+  background: transparent; color: var(--text-3);
+  border: 1px solid var(--border-md); flex: 0 0 auto;
+  padding: 18px 24px;
+  font-family: var(--ff-mono); font-size: 11px; text-transform: uppercase;
+  cursor: pointer; clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%);
+  transition: all .25s;
+}
+.form-back-btn:hover { border-color: var(--gold); color: var(--gold); }
+
+/* ─── SELECT ─── */
+.form-select {
+  appearance: none; -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23c9a96e' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 18px center; padding-right: 44px;
+  cursor: pointer;
+}
+.form-select option { background: var(--bg-3); color: var(--text); }
+
+@media (max-width: 640px) {
+  .choice-grid { grid-template-columns: repeat(2, 1fr); }
+  .form-grid { grid-template-columns: 1fr; }
+  .cta-wrap { padding: 48px 20px; }
+}
+
 </style>
 </head>
 
@@ -693,43 +766,128 @@ ul li::before { content: '→'; color: var(--gold); font-size: 14px; flex-shrink
       <section id="cta">
         <div class="cta-wrap sr">
           <h2 class="cta-h">Lancer mon audit<br><em>gratuit</em></h2>
-          <p>Recevez un diagnostic personnalisé de votre site sous 24h. Gratuit, sans engagement, livré directement par Nicolas.</p>
+          <p>3 minutes &middot; Diagnostic personnalis&eacute; &middot; Livr&eacute; sous 24h par Nicolas</p>
 
-          <!-- FORMULAIRE AUDIT GRATUIT -->
-          <form id="auditForm" class="audit-form" action="https://formspree.io/f/contact@ghostneural.com" method="POST" novalidate>
-            <input type="hidden" name="_subject" value="🔍 Nouvelle demande d'audit gratuit — GhostNeural">
-            <input type="hidden" name="_next" value="https://www.ghostneural.com/audit-site-web-pme.html">
+          <!-- STEPPER -->
+          <div class="stepper" id="stepper">
+            <div class="step-dot active" data-step="1"><span>1</span></div>
+            <div class="step-line"></div>
+            <div class="step-dot" data-step="2"><span>2</span></div>
+            <div class="step-line"></div>
+            <div class="step-dot" data-step="3"><span>3</span></div>
+          </div>
+          <p class="step-label" id="stepLabel">Votre site &mdash; &Eacute;tape 1 / 3</p>
 
-            <div class="form-grid">
-              <div class="form-field">
-                <label class="form-label" for="audit-nom">Votre prénom *</label>
-                <input class="form-input" type="text" id="audit-nom" name="prenom" placeholder="Nicolas" required>
+          <!-- FORMULAIRE -->
+          <form id="auditForm" class="audit-form" action="https://formspree.io/f/xgoldqkr" method="POST" novalidate>
+            <input type="hidden" name="_subject" value="Nouvelle demande d'audit gratuit - GhostNeural">
+
+            <!-- ETAPE 1 -->
+            <div class="form-step active" id="step1">
+              <div class="form-grid">
+                <div class="form-field">
+                  <label class="form-label" for="a-prenom">Votre pr&eacute;nom *</label>
+                  <input class="form-input" type="text" id="a-prenom" name="prenom" placeholder="Nicolas" autocomplete="given-name" required>
+                </div>
+                <div class="form-field">
+                  <label class="form-label" for="a-email">Votre email *</label>
+                  <input class="form-input" type="email" id="a-email" name="email" placeholder="vous@exemple.fr" autocomplete="email" required>
+                </div>
+                <div class="form-field full">
+                  <label class="form-label" for="a-url">URL de votre site *</label>
+                  <input class="form-input" type="text" id="a-url" name="url_site" placeholder="https://www.votresite.fr" required>
+                </div>
+                <div class="form-field full">
+                  <label class="form-label" for="a-secteur">Secteur d'activit&eacute; *</label>
+                  <select class="form-input form-select" id="a-secteur" name="secteur" required>
+                    <option value="" disabled selected>Choisissez votre secteur&hellip;</option>
+                    <option>Artisan / BTP</option>
+                    <option>Commerce / Retail</option>
+                    <option>Sant&eacute; / Bien-&ecirc;tre</option>
+                    <option>Restauration / H&ocirc;tellerie</option>
+                    <option>Services aux entreprises</option>
+                    <option>Immobilier</option>
+                    <option>Professions lib&eacute;rales</option>
+                    <option>E-commerce</option>
+                    <option>Autre</option>
+                  </select>
+                </div>
               </div>
-              <div class="form-field">
-                <label class="form-label" for="audit-email">Votre email *</label>
-                <input class="form-input" type="email" id="audit-email" name="email" placeholder="vous@exemple.fr" required>
-              </div>
+              <button type="button" class="cta-btn form-next-btn" onclick="goStep(1,2)">
+                Continuer &rarr; &Eacute;tape 2
+              </button>
+            </div>
+
+            <!-- ETAPE 2 -->
+            <div class="form-step" id="step2">
               <div class="form-field full">
-                <label class="form-label" for="audit-url">URL de votre site *</label>
-                <input class="form-input" type="url" id="audit-url" name="url_site" placeholder="https://www.votresite.fr" required>
+                <label class="form-label">Votre principal probl&egrave;me actuel ? *</label>
+                <div class="choice-grid">
+                  <label class="choice-card"><input type="radio" name="probleme" value="Peu de contacts"><span class="choice-ico">&#128205;</span><span>Peu de contacts</span></label>
+                  <label class="choice-card"><input type="radio" name="probleme" value="Invisible sur Google"><span class="choice-ico">&#128269;</span><span>Invisible sur Google</span></label>
+                  <label class="choice-card"><input type="radio" name="probleme" value="Site trop lent"><span class="choice-ico">&#128034;</span><span>Site trop lent</span></label>
+                  <label class="choice-card"><input type="radio" name="probleme" value="Pas adapte mobile"><span class="choice-ico">&#128241;</span><span>Pas adapt&eacute; mobile</span></label>
+                  <label class="choice-card"><input type="radio" name="probleme" value="Design vieillissant"><span class="choice-ico">&#127912;</span><span>Design vieillissant</span></label>
+                  <label class="choice-card"><input type="radio" name="probleme" value="Je ne sais pas"><span class="choice-ico">&#10067;</span><span>Je ne sais pas</span></label>
+                </div>
               </div>
-              <div class="form-field full">
-                <label class="form-label" for="audit-message">Votre activité & principal défi (facultatif)</label>
-                <textarea class="form-textarea" id="audit-message" name="message" placeholder="Ex : plombier à Lyon, je reçois du trafic mais très peu d'appels..."></textarea>
+              <div class="form-field full" style="margin-top:24px;">
+                <label class="form-label">Votre objectif prioritaire ? *</label>
+                <div class="choice-grid" style="grid-template-columns:repeat(2,1fr);">
+                  <label class="choice-card"><input type="radio" name="objectif" value="Plus de leads"><span class="choice-ico">&#128188;</span><span>Plus de leads</span></label>
+                  <label class="choice-card"><input type="radio" name="objectif" value="Meilleur SEO"><span class="choice-ico">&#128200;</span><span>Meilleur SEO</span></label>
+                  <label class="choice-card"><input type="radio" name="objectif" value="Refonte du site"><span class="choice-ico">&#128260;</span><span>Refonte du site</span></label>
+                  <label class="choice-card"><input type="radio" name="objectif" value="Optimiser les performances"><span class="choice-ico">&#9889;</span><span>Performance</span></label>
+                </div>
+              </div>
+              <div style="display:flex;gap:12px;margin-top:32px;">
+                <button type="button" class="cta-btn form-back-btn" onclick="goStep(2,1)">&#8592; Retour</button>
+                <button type="button" class="cta-btn form-next-btn" onclick="goStep(2,3)" style="flex:1;justify-content:center;">Continuer &rarr; &Eacute;tape 3</button>
               </div>
             </div>
 
-            <button type="submit" class="cta-btn form-submit" id="auditSubmit">
-              Envoyer ma demande d'audit →
-            </button>
-            <p class="form-error-msg" id="auditError">Une erreur est survenue. Réessayez ou écrivez à contact@ghostneural.com</p>
+            <!-- ETAPE 3 -->
+            <div class="form-step" id="step3">
+              <div class="form-grid">
+                <div class="form-field full">
+                  <label class="form-label">Depuis combien de temps votre site est en ligne ?</label>
+                  <div class="choice-grid" style="grid-template-columns:repeat(2,1fr);">
+                    <label class="choice-card"><input type="radio" name="anciennete" value="Moins d1 an"><span>- d'1 an</span></label>
+                    <label class="choice-card"><input type="radio" name="anciennete" value="1 a 3 ans"><span>1 &ndash; 3 ans</span></label>
+                    <label class="choice-card"><input type="radio" name="anciennete" value="3 a 5 ans"><span>3 &ndash; 5 ans</span></label>
+                    <label class="choice-card"><input type="radio" name="anciennete" value="Plus de 5 ans"><span>+ de 5 ans</span></label>
+                  </div>
+                </div>
+                <div class="form-field full">
+                  <label class="form-label" for="a-budget">Enveloppe budget envisag&eacute;e (facultatif)</label>
+                  <select class="form-input form-select" id="a-budget" name="budget">
+                    <option value="" disabled selected>S&eacute;lectionner&hellip;</option>
+                    <option>Je ne sais pas encore</option>
+                    <option>Moins de 500 euros</option>
+                    <option>500 - 1500 euros</option>
+                    <option>1500 - 3000 euros</option>
+                    <option>Plus de 3000 euros</option>
+                  </select>
+                </div>
+                <div class="form-field full">
+                  <label class="form-label" for="a-message">Contexte compl&eacute;mentaire (facultatif)</label>
+                  <textarea class="form-textarea" id="a-message" name="message" placeholder="Ex : site refait il y a 6 mois, trafic stable mais aucun appel..."></textarea>
+                </div>
+              </div>
+              <div style="display:flex;gap:12px;margin-top:8px;">
+                <button type="button" class="cta-btn form-back-btn" onclick="goStep(3,2)">&#8592; Retour</button>
+                <button type="submit" class="cta-btn form-submit" id="auditSubmit" style="flex:1;justify-content:center;">Envoyer &mdash; Recevoir mon audit &#128640;</button>
+              </div>
+              <p class="form-error-msg" id="auditError">Une erreur est survenue. R&eacute;essayez ou &eacute;crivez &agrave; contact@ghostneural.com</p>
+            </div>
+
           </form>
 
-          <!-- SUCCÈS -->
+          <!-- SUCCES -->
           <div class="form-success" id="auditSuccess">
-            <div class="form-success-ico">✓</div>
-            <div class="form-success-title">Demande reçue !</div>
-            <p class="form-success-sub">Nicolas vous répondra sous 24h avec votre audit personnalisé.<br>Vérifiez vos spams si besoin.</p>
+            <div class="form-success-ico">&#10003;</div>
+            <div class="form-success-title">Audit en pr&eacute;paration&thinsp;!</div>
+            <p class="form-success-sub">Nicolas analyse votre site et vous envoie votre diagnostic personnalis&eacute; sous 24h.<br>V&eacute;rifiez vos spams si besoin.</p>
           </div>
 
           <div style="display:flex;align-items:center;justify-content:center;gap:28px;margin-top:28px;flex-wrap:wrap;">
@@ -855,6 +1013,57 @@ window.addEventListener('scroll', () => {
     if (l.getAttribute('href') === "#" + current) { l.classList.add('active'); }
   });
 });
+
+
+/* ─── QUESTIONNAIRE MULTI-ETAPES ─── */
+const STEP_LABELS = ['', 'Votre site — Etape 1 / 3', 'Vos objectifs — Etape 2 / 3', 'Contexte — Etape 3 / 3'];
+
+function goStep(from, to) {
+  // Validation etape 1
+  if (from === 1) {
+    const prenom  = document.getElementById('a-prenom').value.trim();
+    const email   = document.getElementById('a-email').value.trim();
+    const url     = document.getElementById('a-url').value.trim();
+    const secteur = document.getElementById('a-secteur').value;
+    if (!prenom || !email || !url || !secteur) {
+      const err = document.getElementById('auditError');
+      err.textContent = 'Merci de remplir les champs obligatoires de cette etape.';
+      err.style.display = 'block';
+      document.getElementById('step3').appendChild(err);
+      document.getElementById('step1').appendChild(err);
+      err.style.display = 'block';
+      return;
+    }
+    // masquer erreur si valide
+    const err = document.getElementById('auditError');
+    if (err) err.style.display = 'none';
+  }
+  // Validation etape 2
+  if (from === 2) {
+    const prob  = document.querySelector('input[name="probleme"]:checked');
+    const obj   = document.querySelector('input[name="objectif"]:checked');
+    if (!prob || !obj) {
+      alert('Merci de cocher une reponse pour chaque question.');
+      return;
+    }
+  }
+
+  const fromEl = document.getElementById('step' + from);
+  const toEl   = document.getElementById('step' + to);
+  fromEl.classList.remove('active');
+  toEl.classList.add('active');
+
+  // Update dots
+  document.querySelectorAll('.step-dot').forEach(d => {
+    const n = parseInt(d.dataset.step);
+    d.classList.remove('active','done');
+    if (n === to)   d.classList.add('active');
+    if (n < to)     d.classList.add('done');
+  });
+
+  document.getElementById('stepLabel').textContent = STEP_LABELS[to];
+  document.getElementById('cta').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
 
 /* ─── FORMULAIRE AUDIT — Soumission AJAX Formspree ─── */
 const auditForm = document.getElementById('auditForm');
