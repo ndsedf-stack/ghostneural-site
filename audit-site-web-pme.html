@@ -1076,11 +1076,14 @@ if (auditForm) {
     const btn = document.getElementById('auditSubmit');
     const successBox = document.getElementById('auditSuccess');
     const errorMsg = document.getElementById('auditError');
+    const stepper = document.getElementById('stepper');
+    const stepLabel = document.getElementById('stepLabel');
 
-    // Validation basique
-    const prenom = auditForm.querySelector('[name="prenom"]').value.trim();
-    const email  = auditForm.querySelector('[name="email"]').value.trim();
-    const url    = auditForm.querySelector('[name="url_site"]').value.trim();
+    // Validation finale avant envoi
+    const prenom = (auditForm.querySelector('[name="prenom"]').value || '').trim();
+    const email  = (auditForm.querySelector('[name="email"]').value || '').trim();
+    const url    = (auditForm.querySelector('[name="url_site"]').value || '').trim();
+    
     if (!prenom || !email || !url) {
       errorMsg.style.display = 'block';
       errorMsg.textContent = 'Merci de remplir les champs obligatoires (prénom, email, URL).';
@@ -1088,7 +1091,8 @@ if (auditForm) {
     }
 
     btn.disabled = true;
-    btn.textContent = 'Envoi en cours…';
+    const originalBtnText = btn.textContent;
+    btn.textContent = 'Envoi en cours...';
     errorMsg.style.display = 'none';
 
     try {
@@ -1098,18 +1102,30 @@ if (auditForm) {
         body: data,
         headers: { 'Accept': 'application/json' }
       });
+      
+      const result = await res.json();
+
       if (res.ok) {
+        // Succès
         auditForm.style.display = 'none';
+        if (stepper) stepper.style.display = 'none';
+        if (stepLabel) stepLabel.style.display = 'none';
         successBox.style.display = 'block';
         successBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
       } else {
-        throw new Error('server');
+        // Erreur API (ex: email non vérifié, quota dépassé)
+        if (result.errors) {
+          throw new Error(result.errors.map(error => error.message).join(", "));
+        } else {
+          throw new Error('Erreur de serveur Formspree');
+        }
       }
     } catch(err) {
+      console.error('Audit Form Error:', err);
       btn.disabled = false;
-      btn.textContent = 'Envoyer ma demande d\'audit →';
+      btn.textContent = originalBtnText;
       errorMsg.style.display = 'block';
-      errorMsg.textContent = 'Une erreur est survenue. Réessayez ou écrivez à contact@ghostneural.com';
+      errorMsg.textContent = 'Erreur : ' + err.message + '. Vérifiez votre connexion ou écrivez à contact@ghostneural.com';
     }
   });
 }
