@@ -113,7 +113,7 @@ body:has(a:hover) .c-ring{width:48px;height:48px;}
 .nav-links{display:flex;align-items:center;gap:36px;}
 .nav-link{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--text-3);text-decoration:none;transition:color .25s;}
 .nav-link:hover{color:var(--gold);}
-.nav-link:visited,.nav-link:link{color:var(--text-3);}
+.nav-link:link, .nav-link:visited { color: var(--text-3) !important; }
 .nav-cta{font-family:var(--ff-mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--bg);background:var(--gold);padding:9px 22px;text-decoration:none;transition:background .25s;clip-path:polygon(10px 0%,100% 0%,calc(100% - 10px) 100%,0% 100%);}
 .nav-cta:hover{background:var(--gold-2);}
 
@@ -332,7 +332,7 @@ ul li strong{color:var(--text-2);}
 <div class="progress-bar" id="progressBar"></div>
 
 <nav class="nav">
-  <a class="nav-logo" href="index.html" aria-label="Ghost Neural - Accueil"><img src="images/logo-ghostneural-sm.png" alt="Ghost Neural — Agence digitale IA-SEO" height="40" style="width:auto;display:block;"></a>
+  <a class="nav-logo" href="index.html" aria-label="Ghost Neural - Accueil"><img src="images/logo-ghostneural-sm.png" alt="Ghost Neural — Agence digitale IA-SEO" height="65" style="width:auto;display:block;"></a>
   <div class="nav-links">
     <a class="nav-link" href="services.html">Services</a>
     <a class="nav-link" href="realisations.html">Réalisations</a>
