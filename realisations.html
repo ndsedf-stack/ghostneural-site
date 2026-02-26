@@ -22,6 +22,12 @@
 <link rel="preload" as="style" href="fonts/fonts.css" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="fonts/fonts.css"></noscript>
 <style>
+/* Radical Fix for Link Colors */
+a:link, a:visited, .nav-link:link, .nav-link:visited { 
+  color: var(--text-3) !important; 
+  text-decoration: none !important;
+}
+
 :root {
   --bg:#060608;--bg-2:#0c0c10;--bg-3:#111117;--bg-4:#161620;
   --border:rgba(255,255,255,0.05);--border-md:rgba(255,255,255,0.09);--border-hi:rgba(255,255,255,0.14);
@@ -171,7 +177,7 @@ p strong{color:var(--text);}
 <div class="progress-bar" id="progressBar"></div>
 
 <nav class="nav">
-  <a class="nav-logo" href="index.html" aria-label="Ghost Neural - Accueil"><img loading="lazy" src="images/logo-ghostneural-sm.png" alt="Ghost Neural — Agence digitale IA-SEO" height="65" style="width:auto;display:block;"></a>
+  <a class="nav-logo" href="index.html" aria-label="Ghost Neural - Accueil"><img loading="lazy" src="images/logo-ghostneural-sm.png" alt="Ghost Neural — Agence digitale IA-SEO" height="120" style="width:auto;display:block;"></a>
   <div class="nav-links">
     <a class="nav-link" href="services.html">Services</a>
     <a class="nav-link active" href="realisations.html">Réalisations</a>
@@ -225,7 +231,7 @@ p strong{color:var(--text);}
     <!-- CASE 1 — Large featured -->
     <div class="case-card large sr" data-type="refonte conversion">
       <div class="case-img">
-        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&auto=format&fit=crop&q=75" alt="Plombier Lyon — Refonte site web PME" width="1200" height="800" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&auto=format&fit=crop&q=75" alt="Plombier Lyon — Refonte site web PME" width="1200" height="120" loading="lazy">
         <div class="case-img-overlay"></div>
       </div>
       <div class="case-body">
@@ -258,7 +264,7 @@ p strong{color:var(--text);}
     <!-- CASE 2 -->
     <div class="case-card sr" data-type="seo">
       <div class="case-img">
-        <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&auto=format&fit=crop&q=75" alt="Cabinet comptable Bordeaux — SEO local" width="800" height="500" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&auto=format&fit=crop&q=75" alt="Cabinet comptable Bordeaux — SEO local" width="800" height="120" loading="lazy">
         <div class="case-img-overlay"></div>
       </div>
       <div class="case-body">
@@ -286,7 +292,7 @@ p strong{color:var(--text);}
     <!-- CASE 3 -->
     <div class="case-card sr" data-type="audit conversion">
       <div class="case-img">
-        <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&auto=format&fit=crop&q=75" alt="Agence immobilière Nantes — Audit conversion" width="800" height="500" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&auto=format&fit=crop&q=75" alt="Agence immobilière Nantes — Audit conversion" width="800" height="120" loading="lazy">
         <div class="case-img-overlay"></div>
       </div>
       <div class="case-body">
@@ -315,7 +321,7 @@ p strong{color:var(--text);}
     <!-- CASE 4 -->
     <div class="case-card large sr" data-type="seo refonte">
       <div class="case-img">
-        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&auto=format&fit=crop&q=75" alt="Restaurant Toulouse — SEO et refonte" width="1200" height="800" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&auto=format&fit=crop&q=75" alt="Restaurant Toulouse — SEO et refonte" width="1200" height="120" loading="lazy">
         <div class="case-img-overlay"></div>
       </div>
       <div class="case-body">
@@ -343,7 +349,7 @@ p strong{color:var(--text);}
     <!-- CASE 5 -->
     <div class="case-card large sr" data-type="audit seo conversion">
       <div class="case-img">
-        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1200&auto=format&fit=crop&q=75" alt="Artisan électricien Paris — Mission complète" width="1200" height="800" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1200&auto=format&fit=crop&q=75" alt="Artisan électricien Paris — Mission complète" width="1200" height="120" loading="lazy">
         <div class="case-img-overlay"></div>
       </div>
       <div class="case-body">
@@ -441,7 +447,7 @@ p strong{color:var(--text);}
       </div>
       <a class="cta-btn" href="audit-site-web-pme.html">
         Demander mon audit gratuit
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <svg width="16" height="120" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
     </div>
   </div>
