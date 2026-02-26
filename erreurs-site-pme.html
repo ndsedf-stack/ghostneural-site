@@ -90,7 +90,7 @@ body:has(a:hover) .c-dot{width:10px;height:10px;background:var(--gold-2);}
 body:has(a:hover) .c-ring{width:48px;height:48px;}
 .progress-bar{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--gold),var(--gold-2));z-index:200;width:0%;transition:width .1s linear;box-shadow:0 0 12px var(--gold);}
 
-.nav{position:fixed;top:0;left:0;right:0;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 48px;background:rgba(6,6,8,.88);backdrop-filter:blur(24px);border-bottom:1px solid var(--border);z-index:100;}
+.nav{position:fixed;top:0;left:0;right:0;height:100px;display:flex;align-items:center;justify-content:space-between;padding:0 48px;background:rgba(6,6,8,.88);backdrop-filter:blur(24px);border-bottom:1px solid var(--border);z-index:100;}
 .nav-logo{font-family:var(--ff-display);font-size:1.35rem;font-weight:500;letter-spacing:.06em;color:var(--white);text-decoration:none;}
 .nav-logo span{color:var(--gold);}
 .nav-links{display:flex;align-items:center;gap:36px;}
@@ -100,7 +100,7 @@ body:has(a:hover) .c-ring{width:48px;height:48px;}
 .nav-cta{font-family:var(--ff-mono);font-size: 13px;letter-spacing:.12em;text-transform:uppercase;color:var(--bg);background:var(--gold);padding:9px 22px;text-decoration:none;clip-path:polygon(10px 0%,100% 0%,calc(100% - 10px) 100%,0% 100%);transition:background .25s;}
 .nav-cta:hover{background:var(--gold-2);}
 
-.breadcrumb{padding:80px 80px 0;display:flex;align-items:center;gap:8px;}
+.breadcrumb{padding:120px 80px 0;display:flex;align-items:center;gap:8px;}
 .bc-item{font-family:var(--ff-mono);font-size: 13px;letter-spacing:.12em;color:var(--text-3);text-decoration:none;}
 .bc-item:hover{color:var(--gold);}
 .bc-sep{color:var(--text-4);font-size: 13px;}
@@ -278,6 +278,451 @@ ul li strong{color:var(--text-2);}
 <link rel="apple-touch-icon" sizes="64x64" href="/images/favicon-64.png">
 </head>
 <body>
+
+<div class="c-dot" id="cDot"></div>
+<div class="c-ring" id="cRing"></div>
+<div class="progress-bar" id="progressBar"></div>
+
+<nav class="nav">
+  <a class="nav-logo" href="/index.html" aria-label="Ghost Neural - Accueil"><img loading="lazy" src="images/logo-ghostneural-sm.png" alt="Ghost Neural — Agence digitale IA-SEO" height="80" style="width:auto;display:block;"></a>
+  <div class="nav-links">
+    <a class="nav-link" href="/services.html">Services</a>
+    <a class="nav-link" href="/realisations.html">Réalisations</a>
+    <a class="nav-link" href="/journal.html">Journal</a>
+    <a class="nav-cta" href="audit-site-web-pme.html">Audit gratuit</a>
+  </div>
+</nav>
+
+<nav aria-label="Fil d'Ariane" class="breadcrumb">
+  <a class="bc-item" href="/index.html">Accueil</a>
+  <span class="bc-sep">/</span>
+  <a class="bc-item" href="/journal.html">Journal</a>
+  <span class="bc-sep">/</span>
+  <span class="bc-current">Erreurs site PME</span>
+</nav>
+
+<header class="hero">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-ghost" aria-hidden="true">NG</div>
+  <div class="hero-content">
+    <div class="hero-eyebrow" aria-hidden="true">
+      <span class="eyebrow-dash"></span>
+      <span class="eyebrow-mono">UX · Conversion · Erreurs fréquentes · PME</span>
+    </div>
+    <h1 class="hero-h1">
+      9 erreurs de site web<br>
+      qui font fuir vos clients<br>
+      <em>sans qu'ils le disent.</em>
+    </h1>
+    <p class="hero-sub">
+      Ils arrivent, regardent 18 secondes, et partent. Pas parce que votre offre est mauvaise — mais parce que votre site commet des erreurs silencieuses. <strong>La plupart des PME en font au moins 4. Combien en faites-vous ?</strong>
+    </p>
+    <div class="hero-footer">
+      <div class="hero-tags">
+        <span class="tag">UX</span>
+        <span class="tag">Conversion</span>
+        <span class="tag">Diagnostic</span>
+        <span class="tag">Lecture · 7 min</span>
+      </div>
+      <div class="hero-reading">
+        <div class="reading-bar" aria-hidden="true"></div>
+        Nicolas — Neural Ghost
+      </div>
+    </div>
+  </div>
+</header>
+
+<figure class="hero-img sr">
+  <img loading="lazy" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1600&auto=format&fit=crop&q=75"
+    alt="Erreurs site web PME — diagnostic UX et conversion" width="1600" height="80" loading="eager" decoding="async">
+  <div class="hero-img-overlay" aria-hidden="true"></div>
+  <figcaption class="hero-img-label">Diagnostic · Erreurs · Conversion</figcaption>
+</figure>
+
+<div class="wrap">
+  <div class="grid-layout">
+
+    <aside class="sidebar">
+      <div class="sidebar-section">
+        <div class="sidebar-label">Sommaire</div>
+        <ul class="toc">
+          <li><a href="#realite"><span class="n">01</span> Le coût réel</a></li>
+          <li><a href="#erreurs"><span class="n">02</span> Les 9 erreurs</a></li>
+          <li><a href="#diagnostic"><span class="n">03</span> Votre score</a></li>
+          <li><a href="#faq"><span class="n">04</span> FAQ</a></li>
+        </ul>
+      </div>
+      <div class="sidebar-author">
+        <div class="sidebar-label">Auteur</div>
+        <div class="s-ava">N</div>
+        <div class="s-name">Nicolas</div>
+        <div class="s-role">Consultant · Neural Ghost</div>
+      </div>
+    </aside>
+
+    <main class="body">
+
+      <p class="intro-pull sr">
+        Un visiteur qui part sans vous contacter ne laisse aucun message. Il ne vous dit pas pourquoi. Il va juste chez le suivant. <strong>C'est le problème des erreurs silencieuses — elles coûtent sans jamais se signaler.</strong>
+      </p>
+
+      <!-- 01 STATS -->
+      <section id="realite">
+        <div class="sec-label sr"><span class="mono">01 — Le coût réel</span><span class="line"></span></div>
+        <h2 class="sr">Ce que ces erreurs <em>représentent en chiffres</em></h2>
+        <p class="sr">Avant d'entrer dans le détail des 9 erreurs, posons le contexte. Ce ne sont pas des problèmes théoriques — chacune a un impact mesurable sur le comportement des visiteurs, et donc sur votre chiffre d'affaires.</p>
+
+        <div class="stat-block sr">
+          <div class="stat-block-head">
+            <div class="stat-block-title">Comportement utilisateur · Données 2025</div>
+            <p class="stat-block-sub">Sources : Nielsen Norman Group, Baymard Institute, Google UX Research</p>
+          </div>
+          <div class="stat-grid">
+            <div class="stat-cell">
+              <span class="stat-tag">Temps avant décision de rester</span>
+              <span class="stat-val bad">8s</span>
+              <span class="stat-unit">un visiteur décide en 8 secondes</span>
+            </div>
+            <div class="stat-cell">
+              <span class="stat-tag">Abandon formulaire trop long</span>
+              <span class="stat-val ok">67%</span>
+              <span class="stat-unit">abandonnent un formulaire complexe</span>
+            </div>
+            <div class="stat-cell">
+              <span class="stat-tag">Impact preuve sociale</span>
+              <span class="stat-val bad">+270%</span>
+              <span class="stat-unit">de conversion avec avis visibles</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <hr class="divider">
+
+      <!-- 02 LES 9 ERREURS -->
+      <section id="erreurs">
+        <div class="sec-label sr"><span class="mono">02 — Les 9 erreurs</span><span class="line"></span></div>
+        <h2 class="sr">Les erreurs que l'on retrouve <em>sur 8 sites PME sur 10</em></h2>
+        <p class="sr">Ces erreurs sont classées par niveau d'impact : critique (perte directe de prospects), majeur (frein significatif à la conversion), courant (perte d'efficacité progressive). Chacune est accompagnée d'un correctif concret.</p>
+
+        <div class="erreurs sr">
+
+          <div class="erreur critique">
+            <div class="erreur-num">01</div>
+            <div class="erreur-body">
+              <div class="erreur-meta">
+                <span class="erreur-severity critique">Critique</span>
+                <span class="erreur-cost">Coût estimé : −30 à 50% de conversions</span>
+              </div>
+              <div class="erreur-title">Aucun CTA visible au-dessus de la ligne de flottaison</div>
+              <p class="erreur-desc">Le visiteur arrive sur votre site, lit votre titre, comprend ce que vous faites — et ne sait pas quoi faire ensuite. Pas de bouton "Demander un devis", pas de "Nous appeler", pas de "Prendre rendez-vous" visible sans scroller. Cette paralysie décisionnelle est responsable à elle seule de la majorité des abandons sur les sites PME.</p>
+              <div class="erreur-fix">
+                <span class="erreur-fix-label">Fix →</span>
+                <span class="erreur-fix-text">Un bouton CTA principal visible dès l'arrivée sur la page, avec un verbe d'action clair. Sur mobile, un bouton sticky en bas d'écran. Test : montrez votre site à quelqu'un 5 secondes. S'il ne sait pas quoi faire, le CTA est insuffisant.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="erreur critique">
+            <div class="erreur-num">02</div>
+            <div class="erreur-body">
+              <div class="erreur-meta">
+                <span class="erreur-severity critique">Critique</span>
+                <span class="erreur-cost">Coût estimé : −40 à 60% du trafic mobile</span>
+              </div>
+              <div class="erreur-title">Site non optimisé pour mobile</div>
+              <p class="erreur-desc">Plus de 65% du trafic local vient du mobile. Un site dont les boutons sont trop petits, le texte trop serré, les images qui débordent ou le formulaire impossible à remplir sur téléphone — c'est un site qui rejette activement la majorité de ses visiteurs. Et Google le pénalise en plus.</p>
+              <div class="erreur-fix">
+                <span class="erreur-fix-label">Fix →</span>
+                <span class="erreur-fix-text">Testez votre site sur votre propre téléphone maintenant. Pouvez-vous naviguer confortablement, lire sans zoomer, remplir le formulaire en moins de 60 secondes ? Si non, c'est la priorité absolue.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="erreur critique">
+            <div class="erreur-num">03</div>
+            <div class="erreur-body">
+              <div class="erreur-meta">
+                <span class="erreur-severity critique">Critique</span>
+                <span class="erreur-cost">Coût estimé : −7% de conversion par seconde</span>
+              </div>
+              <div class="erreur-title">Temps de chargement supérieur à 3 secondes</div>
+              <p class="erreur-desc">53% des visiteurs mobiles abandonnent un site qui charge en plus de 3 secondes. C'est mécanique — pas d'intention, pas de jugement. Ils partent avant même d'avoir vu votre offre. Un site lent, c'est un magasin dont la porte met 5 secondes à s'ouvrir.</p>
+              <div class="erreur-fix">
+                <span class="erreur-fix-label">Fix →</span>
+                <span class="erreur-fix-text">Testez sur pagespeed.web.dev. Si votre score mobile est sous 60, les causes principales sont presque toujours : images non compressées, absence de cache, hébergement sous-dimensionné. Les trois sont corrigeables sans refonte.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="erreur majeur">
+            <div class="erreur-num">04</div>
+            <div class="erreur-body">
+              <div class="erreur-meta">
+                <span class="erreur-severity majeur">Majeur</span>
+                <span class="erreur-cost">Coût estimé : −25 à 40% de confiance prospect</span>
+              </div>
+              <div class="erreur-title">Absence de preuves sociales visibles</div>
+              <p class="erreur-desc">88% des consommateurs font autant confiance aux avis Google qu'à une recommandation personnelle. Un site sans avis, sans témoignages, sans logos clients ou sans chiffres de réalisation crée un doute chez le visiteur. Ce doute se transforme en inaction — il ne vous contacte pas, "juste pour voir ailleurs".</p>
+              <div class="erreur-fix">
+                <span class="erreur-fix-label">Fix →</span>
+                <span class="erreur-fix-text">Intégrez vos avis Google directement sur votre page d'accueil (widget ou captures). Ajoutez 2 à 3 témoignages clients avec prénom et secteur. Si vous avez des chiffres (clients, années d'expérience, projets), affichez-les en évidence.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="erreur majeur">
+            <div class="erreur-num">05</div>
+            <div class="erreur-body">
+              <div class="erreur-meta">
+                <span class="erreur-severity majeur">Majeur</span>
+                <span class="erreur-cost">Coût estimé : −20 à 35% de contacts entrants</span>
+              </div>
+              <div class="erreur-title">Formulaire de contact trop long ou mal placé</div>
+              <p class="erreur-desc">Chaque champ supplémentaire dans un formulaire réduit le taux de complétion. Un prospect qui veut juste vous poser une question ne devrait pas avoir à renseigner son adresse, son budget, son secteur, et la date de son projet avant d'avoir eu votre réponse. La friction tue la conversion.</p>
+              <div class="erreur-fix">
+                <span class="erreur-fix-label">Fix →</span>
+                <span class="erreur-fix-text">Réduisez à 3 champs maximum pour un premier contact : nom, email ou téléphone, message court. Positionnez le formulaire sur la page d'accueil et sur chaque page service. Ajoutez aussi un numéro de téléphone cliquable — certains préfèrent appeler.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="erreur majeur">
+            <div class="erreur-num">06</div>
+            <div class="erreur-body">
+              <div class="erreur-meta">
+                <span class="erreur-severity majeur">Majeur</span>
+                <span class="erreur-cost">Coût estimé : −15 à 30% de trafic organique</span>
+              </div>
+              <div class="erreur-title">Contenu écrit pour soi, pas pour Google ni pour le client</div>
+              <p class="erreur-desc">Beaucoup de sites PME décrivent leur entreprise ("Nous sommes une société fondée en 2008, spécialisée dans…") au lieu de répondre à la question du prospect ("Comment résolvez-vous mon problème ?"). Ce double manque — SEO faible et message peu engageant — réduit à la fois le trafic et la conversion.</p>
+              <div class="erreur-fix">
+                <span class="erreur-fix-label">Fix →</span>
+                <span class="erreur-fix-text">Réécrivez votre H1 avec le mot-clé principal + la promesse client. Exemple : "Plombier à Lyon — intervention en 2h, devis gratuit" plutôt que "Bienvenue chez Plomberie Martin". Le titre doit répondre à la recherche du prospect en moins de 10 mots.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="erreur courant">
+            <div class="erreur-num">07</div>
+            <div class="erreur-body">
+              <div class="erreur-meta">
+                <span class="erreur-severity courant">Courant</span>
+                <span class="erreur-cost">Coût estimé : −10 à 20% d'engagement</span>
+              </div>
+              <div class="erreur-title">Navigation confuse ou trop chargée</div>
+              <p class="erreur-desc">Un menu avec 8 rubriques, des sous-menus en cascade, des liens vers des pages secondaires dès la page d'accueil — cela crée ce qu'on appelle la "paralysie du choix". Le visiteur ne sait pas où aller. La règle des 7 éléments maximum dans un menu n'est pas arbitraire : elle correspond à notre capacité d'attention.</p>
+              <div class="erreur-fix">
+                <span class="erreur-fix-label">Fix →</span>
+                <span class="erreur-fix-text">Limitez la navigation principale à 4 à 5 rubriques max. Chaque rubrique doit correspondre à un objectif visiteur clair. Testez : demandez à quelqu'un de trouver votre numéro de téléphone en moins de 10 secondes. S'il galère, simplifiez.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="erreur courant">
+            <div class="erreur-num">08</div>
+            <div class="erreur-body">
+              <div class="erreur-meta">
+                <span class="erreur-severity courant">Courant</span>
+                <span class="erreur-cost">Coût estimé : −10 à 15% de confiance</span>
+              </div>
+              <div class="erreur-title">Photos génériques ou stock sans personnalité</div>
+              <p class="erreur-desc">Les photos de banques d'images avec des sourires parfaits en costume générique sont immédiatement identifiées comme telles par vos visiteurs. Elles signalent un manque d'authenticité. Pour une PME locale, une photo réelle de vous, de votre équipe ou de vos réalisations vaut dix fois une illustration parfaite mais froide.</p>
+              <div class="erreur-fix">
+                <span class="erreur-fix-label">Fix →</span>
+                <span class="erreur-fix-text">Prenez 2 heures avec un bon smartphone pour photographier votre espace de travail, votre équipe, vos réalisations récentes. Des photos imparfaites mais authentiques convertissent mieux que des visuels parfaits mais génériques.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="erreur courant">
+            <div class="erreur-num">09</div>
+            <div class="erreur-body">
+              <div class="erreur-meta">
+                <span class="erreur-severity courant">Courant</span>
+                <span class="erreur-cost">Coût estimé : −8 à 12% de prospects</span>
+              </div>
+              <div class="erreur-title">Absence de signaux de réassurance</div>
+              <p class="erreur-desc">Certifications, garanties, politique de remboursement, mentions légales accessibles, numéro de téléphone affiché, adresse physique visible — ces éléments semblent secondaires mais jouent un rôle décisif chez un prospect hésitant. Leur absence crée un doute diffus qui se traduit par une non-décision.</p>
+              <div class="erreur-fix">
+                <span class="erreur-fix-label">Fix →</span>
+                <span class="erreur-fix-text">Ajoutez dans votre footer ou header : numéro de téléphone visible, adresse physique, email de contact direct, et vos certifications le cas échéant. Sur les pages à fort enjeu (devis, contact), ajoutez une ligne de réassurance sous le CTA ("Réponse sous 24h · Sans engagement").</span>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- fin erreurs -->
+
+        <div class="pq sr">
+          <p class="pq-text">Ces erreurs ne sont pas des détails. <em>Chacune représente des prospects réels</em> qui ont vu votre site, n'ont pas su quoi faire, et sont allés chez quelqu'un d'autre.</p>
+        </div>
+      </section>
+
+      <hr class="divider">
+
+      <!-- 03 DIAGNOSTIC -->
+      <section id="diagnostic">
+        <div class="sec-label sr"><span class="mono">03 — Votre score</span><span class="line"></span></div>
+        <h2 class="sr">Combien d'erreurs <em>fait votre site en ce moment ?</em></h2>
+        <p class="sr">Cochez les erreurs que vous ne commettez <strong>pas</strong> — c'est-à-dire les points que votre site traite correctement. Plus votre score est bas, plus les gains potentiels sont importants.</p>
+
+        <div class="cklist sr">
+          <div class="cklist-head">
+            <span class="cklist-head-title">Diagnostic erreurs · Site PME</span>
+            <span class="cklist-head-sub">Cochez ce que votre site fait bien</span>
+          </div>
+          <div class="ck-row" onclick="ckToggle(this)" role="checkbox" aria-checked="false" tabindex="0" data-pts="1">
+            <div class="ck-box"></div>
+            <span class="ck-text">Un CTA clair est visible dès l'arrivée sur la page, sans scroller</span>
+            <span class="ck-sev c">Critique</span>
+          </div>
+          <div class="ck-row" onclick="ckToggle(this)" role="checkbox" aria-checked="false" tabindex="0" data-pts="1">
+            <div class="ck-box"></div>
+            <span class="ck-text">Le site s'affiche parfaitement et est facile à utiliser sur mobile</span>
+            <span class="ck-sev c">Critique</span>
+          </div>
+          <div class="ck-row" onclick="ckToggle(this)" role="checkbox" aria-checked="false" tabindex="0" data-pts="1">
+            <div class="ck-box"></div>
+            <span class="ck-text">Le site charge en moins de 3 secondes sur mobile (PageSpeed > 60)</span>
+            <span class="ck-sev c">Critique</span>
+          </div>
+          <div class="ck-row" onclick="ckToggle(this)" role="checkbox" aria-checked="false" tabindex="0" data-pts="1">
+            <div class="ck-box"></div>
+            <span class="ck-text">Des avis clients ou témoignages sont visibles sur la page d'accueil</span>
+            <span class="ck-sev m">Majeur</span>
+          </div>
+          <div class="ck-row" onclick="ckToggle(this)" role="checkbox" aria-checked="false" tabindex="0" data-pts="1">
+            <div class="ck-box"></div>
+            <span class="ck-text">Le formulaire de contact contient 3 champs maximum et est bien positionné</span>
+            <span class="ck-sev m">Majeur</span>
+          </div>
+          <div class="ck-row" onclick="ckToggle(this)" role="checkbox" aria-checked="false" tabindex="0" data-pts="1">
+            <div class="ck-box"></div>
+            <span class="ck-text">Le H1 contient mes mots-clés principaux et répond à la recherche du client</span>
+            <span class="ck-sev m">Majeur</span>
+          </div>
+          <div class="ck-row" onclick="ckToggle(this)" role="checkbox" aria-checked="false" tabindex="0" data-pts="1">
+            <div class="ck-box"></div>
+            <span class="ck-text">La navigation est simple (5 rubriques max) et intuitive</span>
+            <span class="ck-sev n">Courant</span>
+          </div>
+          <div class="ck-row" onclick="ckToggle(this)" role="checkbox" aria-checked="false" tabindex="0" data-pts="1">
+            <div class="ck-box"></div>
+            <span class="ck-text">Les photos sont authentiques (équipe, réalisations, espace de travail réel)</span>
+            <span class="ck-sev n">Courant</span>
+          </div>
+          <div class="ck-row" onclick="ckToggle(this)" role="checkbox" aria-checked="false" tabindex="0" data-pts="1">
+            <div class="ck-box"></div>
+            <span class="ck-text">Téléphone, adresse et signaux de réassurance sont visibles sur toutes les pages</span>
+            <span class="ck-sev n">Courant</span>
+          </div>
+          <div class="cklist-foot">
+            <div class="ck-result" id="ckResult">Cochez pour voir votre score</div>
+            <div class="ck-advice" id="ckAdvice"></div>
+          </div>
+        </div>
+      </section>
+
+      <hr class="divider">
+
+      <!-- FAQ -->
+      <section id="faq">
+        <div class="sec-label sr"><span class="mono">04 — Questions fréquentes</span><span class="line"></span></div>
+        <h2 class="sr">Ce que les PME <em>nous demandent souvent</em></h2>
+
+        <div class="faq sr">
+          <div class="faq-item">
+            <div class="faq-q" onclick="faqToggle(this)" tabindex="0" aria-expanded="false">
+              Comment savoir si mon site perd des visiteurs sans le savoir ?
+              <span class="faq-ico">+</span>
+            </div>
+            <div class="faq-a">
+              <div class="faq-a-inner">Google Analytics (gratuit) vous montre le taux de rebond, la durée moyenne des sessions et les pages de sortie. Un taux de rebond supérieur à 70 % ou une durée de session inférieure à 45 secondes sont des signaux d'alerte clairs. Si vous n'avez pas Analytics installé, c'est le premier chantier à lancer — vous naviguez à l'aveugle.</div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" onclick="faqToggle(this)" tabindex="0" aria-expanded="false">
+              Par quelle erreur commencer pour un impact maximal ?
+              <span class="faq-ico">+</span>
+            </div>
+            <div class="faq-a">
+              <div class="faq-a-inner">Commencez par les trois erreurs "Critique" — CTA absent, site non mobile, site lent. Ce sont celles qui ont l'impact le plus immédiat sur votre taux de conversion. Ensuite, les preuves sociales et le formulaire simplifié. L'ordre de priorité correspond à l'ordre de sévérité dans l'article.</div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" onclick="faqToggle(this)" tabindex="0" aria-expanded="false">
+              Mon site est beau mais ne génère pas de contacts. Pourquoi ?
+              <span class="faq-ico">+</span>
+            </div>
+            <div class="faq-a">
+              <div class="faq-a-inner">L'esthétique et la performance commerciale sont deux choses distinctes. Un site peut être visuellement réussi mais manquer de structure de conversion. Les causes les plus fréquentes : CTA absent ou peu visible, message trop générique, manque de preuves sociales, tunnel de contact trop complexe. Un audit de conversion identifie le problème précis en 48h.</div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" onclick="faqToggle(this)" tabindex="0" aria-expanded="false">
+              Peut-on corriger ces erreurs sans refaire son site ?
+              <span class="faq-ico">+</span>
+            </div>
+            <div class="faq-a">
+              <div class="faq-a-inner">Dans la majorité des cas, oui. L'ajout de CTA, la réécriture des textes, l'intégration d'avis et la simplification du formulaire se font sans refonte. La vitesse et le mobile nécessitent parfois des interventions techniques, mais rarement une refonte complète. Seul le cas d'un site technologiquement obsolète justifie de tout recommencer.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <div class="cta-wrap sr" id="cta">
+        <div class="cta-inner">
+          <div class="cta-kicker">
+            <span class="cta-kicker-line"></span>
+            Audit Gratuit · Diagnostic Complet · 24h
+            <span class="cta-kicker-line"></span>
+          </div>
+          <h2 class="cta-h">
+            Combien d'erreurs<br>
+            <em>fait votre site</em><br>
+            en ce moment ?
+          </h2>
+          <p class="cta-copy">
+            Un audit Neural Ghost analyse votre site sur les 9 points critiques de cet article — et vous livre un plan d'action priorisé. <strong>Gratuit, livré sous 24h, sans engagement.</strong>
+          </p>
+          <div class="cta-reassurance">
+            <div class="cta-r-item">Réponse sous 24h</div>
+            <div class="cta-r-item">100% gratuit</div>
+            <div class="cta-r-item">Sans engagement</div>
+            <div class="cta-r-item">Plan d'action concret</div>
+          </div>
+          <div class="cta-btn-wrap">
+            <a class="cta-btn" href="/audit-site-web-pme.html">
+              Diagnostiquer mon site maintenant
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="display:inline-block; vertical-align:middle; margin-left:8px;"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <span class="cta-guarantee"><span>✦</span> Diagnostic livré par Nicolas · <span>Neural Ghost</span></span>
+          </div>
+          <div class="cta-social-proof">
+            <div class="cta-stars">★★★★★</div>
+            <p class="cta-sp-text"><strong>4,9/5</strong> · Plus de 60 audits réalisés pour des PME françaises</p>
+          </div>
+        </div>
+      </div>
+
+      <footer class="art-footer">
+        <div class="art-ava">N</div>
+        <div>
+          <div class="art-a-name">Nicolas — Neural Ghost</div>
+          <div class="art-a-role">Consultant UX · Conversion · Stratégie Web PME</div>
+        </div>
+        <div class="art-share">
+          <span class="share-lbl">Partager</span>
+          <a class="share-ico" href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.ghostneural.com/erreurs-site-pme.html" target="_blank" rel="noopener">in</a>
+          <a class="share-ico" href="https://twitter.com/intent/tweet?url=https://www.ghostneural.com/erreurs-site-pme.html" target="_blank" rel="noopener">𝕏</a>
+        </div>
+      </footer>
+
+    </main>
+  </div>
+</div>
+
 <script>
 const dot=document.getElementById('cDot'),ring=document.getElementById('cRing');
 let mx=0,my=0,rx=0,ry=0;
@@ -291,6 +736,7 @@ const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersect
 document.querySelectorAll('.sr').forEach(el=>io.observe(el));
 setTimeout(()=>document.querySelectorAll('.sr').forEach(el=>el.classList.add('vis')),2000);
 
+/* Diagnostic checklist — score inversé (on coche ce qu'on fait bien) */
 const VERDICTS=[
   {min:0,max:2,result:'⚠️ 7 à 9 erreurs détectées',advice:'Votre site perd activement des clients chaque semaine. Les corrections prioritaires (CTA, mobile, vitesse) peuvent doubler votre taux de conversion en moins de 30 jours. Un audit s\'impose.',color:'var(--red)'},
   {min:3,max:5,result:'↗ 4 à 6 erreurs à corriger',advice:'Votre site a des bases mais des freins importants persistent. Des corrections ciblées — sans refonte — peuvent générer 30 à 60% de contacts supplémentaires. Identifiez les points critiques en priorité.',color:'var(--amber)'},
