@@ -1,0 +1,13 @@
+RewriteEngine On
+
+# Redirection neuralghost.ai → ghostneural.com
+RewriteCond %{HTTP_HOST} ^(www\.)?neuralghost\.ai$ [NC]
+RewriteRule ^(.*)$ https://www.ghostneural.com/$1 [R=301,L]
+
+# Forcer HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+# Forcer www
+RewriteCond %{HTTP_HOST} ^ghostneural\.com$ [NC]
+RewriteRule ^(.*)$ https://www.ghostneural.com/$1 [R=301,L]

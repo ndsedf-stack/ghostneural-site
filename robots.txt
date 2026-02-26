@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://neuralghost.ai/sitemap.xml
+Sitemap: https://www.ghostneural.com/sitemap.xml
